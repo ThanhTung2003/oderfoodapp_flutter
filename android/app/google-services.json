@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "397809957641",
+    "project_id": "orderfoodapp-b6e54",
+    "storage_bucket": "orderfoodapp-b6e54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397809957641:android:c9a1d1cefd3cd7d90e71d8",
+        "android_client_info": {
+          "package_name": "com.example.oderfoodapp_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKQ5srJsUjYe1Iv2hg657sPUo8qPm_Hio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
