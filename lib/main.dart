@@ -8,10 +8,12 @@ import 'package:oderfoodapp_flutter/viewmodel/main_view_model_imp.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -52,7 +54,7 @@ class MyHomePage extends StatelessWidget {
           } else if (snapshot.hasError) {
             return Center(child: Text('Lỗi: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return Center(child: Text('Không có dữ liệu'));
+            return const Center(child: Text('Không có dữ liệu'));
           } else {
             var lst = snapshot.data!;
             return ListView.builder(

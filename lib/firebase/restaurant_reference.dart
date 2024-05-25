@@ -18,7 +18,7 @@ Future<List<RestaurantModel>> getRestaurantList() async {
     });
   } else {
     // Nếu snapshot không tồn tại hoặc giá trị bị null, trả về danh sách rỗng
-    print('No data available');
+   // print('No data available');
   }
 
   return list;
