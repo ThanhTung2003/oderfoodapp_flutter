@@ -1,1 +1,1 @@
-final restaurantText = 'Nhà hàng ABEN';
+const restaurantText = 'Quản lý nhà hàng ABEN';
