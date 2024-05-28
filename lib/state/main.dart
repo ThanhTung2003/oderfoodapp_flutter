@@ -1,11 +1,13 @@
 import 'package:auto_animated/auto_animated.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/model/restaurant_model.dart';
+import 'package:oderfoodapp_flutter/screen/restaurant_home.dart';
+import 'package:oderfoodapp_flutter/state/main_state.dart';
 import 'package:oderfoodapp_flutter/strings/main_strings.dart';
-import 'package:oderfoodapp_flutter/viewmodel/main_view_model_imp.dart';
-import 'package:oderfoodapp_flutter/widgets/main/main_widget.dart';
+import 'package:oderfoodapp_flutter/viewmodel/mainVM/main_view_model_imp.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,6 +33,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   final viewModel = MainViewModelImp();
+  final mainStateController = Get.put(MainStateController());
 
   MyHomePage({super.key});
 
@@ -87,18 +90,21 @@ class MyHomePage extends StatelessWidget {
         child: Container(
           margin: const EdgeInsets.only(top: 10),
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              mainStateController.selectedRestaurant.value = lst[index];
+              Get.to(() => RestaurantHome());
+            },
             child: Container(
               width: double.infinity,
               height: MediaQuery.of(context).size.height / 2.5 * 1.222,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  RestaurantImageWidget(
-                      imageUrl: lst[index].imageUrl), //tách thành widget
+                  RestaurantImageWidget(imageUrl: lst[index].imageUrl),
                   RestaurantInfoCard(
-                    name:lst[index].name,
-                    address:lst[index].address) // tach thanh widget
+                    name: lst[index].name,
+                    address: lst[index].address,
+                  ),
                 ],
               ),
             ),
@@ -109,3 +115,65 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
+class RestaurantImageWidget extends StatelessWidget {
+  final String imageUrl;
+
+  const RestaurantImageWidget({super.key, required this.imageUrl});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 250,
+      child: Card(
+        semanticContainer: true,
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        child: Image.network(
+          imageUrl,
+          fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) => const Center(
+            child: Icon(Icons.image),
+          ),
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) return child;
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class RestaurantInfoCard extends StatelessWidget {
+  final String name;
+  final String address;
+
+  const RestaurantInfoCard({super.key, required this.name, required this.address});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            name,
+            style: GoogleFonts.jetBrainsMono(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+          Text(
+            address,
+            style: GoogleFonts.jetBrainsMono(
+              fontWeight: FontWeight.w500,
+              fontSize: 16,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

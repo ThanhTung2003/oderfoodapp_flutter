@@ -12,13 +12,15 @@ Future<List<RestaurantModel>> getRestaurantList() async {
   // Kiểm tra nếu có dữ liệu
   if (snapshot.exists && snapshot.value != null) {
     Map<dynamic, dynamic> values = snapshot.value as Map<dynamic, dynamic>;
-
     values.forEach((key, value) {
-      list.add(RestaurantModel.fromJson(Map<String, dynamic>.from(value)));
+      var restaurantModel = RestaurantModel.fromJson(Map<String, dynamic>.from(value));
+      // Đặt restaurantId nếu cần
+      // restaurantModel.restaurantId = key; // Nếu model của bạn có thuộc tính restaurantId
+      list.add(restaurantModel);
     });
   } else {
     // Nếu snapshot không tồn tại hoặc giá trị bị null, trả về danh sách rỗng
-   // print('No data available');
+    print('No data available');
   }
 
   return list;
