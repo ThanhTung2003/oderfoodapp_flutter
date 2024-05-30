@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'abennnnn',
       theme: ThemeData(
@@ -62,58 +62,71 @@ class MyHomePage extends StatelessWidget {
             return const Center(child: Text('Không có dữ liệu'));
           } else {
             var lst = snapshot.data!;
-            return LiveList.options(
-              options: const LiveOptions(
-                showItemInterval: Duration(milliseconds: 150),
-                showItemDuration: Duration(milliseconds: 350),
+            return Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: LiveList(
+                showItemDuration: const Duration(milliseconds: 350),
+                showItemInterval: const Duration(milliseconds: 150),
                 reAnimateOnVisibility: true,
+                scrollDirection: Axis.vertical,
+                itemCount: lst.length,
+                itemBuilder: (context, index, animation) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: SlideTransition(
+                      position: Tween<Offset>(
+                        begin: const Offset(0, 0.1),
+                        end: Offset.zero,
+                      ).animate(animation),
+                      child: InkWell(
+                        onTap: () {
+                          mainStateController.selectedRestaurant.value = lst[index];
+                          Get.to(() => RestaurantHome());
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.only(top: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.network(lst[index].imageUrl, fit: BoxFit.cover),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  lst[index].name,
+                                  style: GoogleFonts.jetBrainsMono(
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.black,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  lst[index].address,
+                                  style: GoogleFonts.jetBrainsMono(
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.black54,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                },
               ),
-              itemCount: lst.length,
-              itemBuilder: (context, index, animation) =>
-                  buildAnimatedItem(context, index, animation, lst),
             );
           }
         },
       ),
     );
   }
-
-  Widget buildAnimatedItem(BuildContext context, int index,
-      Animation<double> animation, List<RestaurantModel> lst) {
-    return FadeTransition(
-      opacity: animation,
-      child: SlideTransition(
-        position: Tween<Offset>(
-          begin: const Offset(0, 0.1),
-          end: Offset.zero,
-        ).animate(animation),
-        child: Container(
-          margin: const EdgeInsets.only(top: 10),
-          child: InkWell(
-            onTap: () {
-              mainStateController.selectedRestaurant.value = lst[index];
-              Get.to(() => RestaurantHome());
-            },
-            child: Container(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height / 2.5 * 1.222,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  RestaurantImageWidget(imageUrl: lst[index].imageUrl),
-                  RestaurantInfoCard(
-                    name: lst[index].name,
-                    address: lst[index].address,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 }
+
 
 class RestaurantImageWidget extends StatelessWidget {
   final String imageUrl;

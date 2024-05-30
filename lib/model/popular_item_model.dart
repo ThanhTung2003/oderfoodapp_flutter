@@ -17,19 +17,19 @@ class PopularItemModel {
   // Factory constructor to create an instance from a JSON object
   factory PopularItemModel.fromJson(Map<String, dynamic> json) {
     return PopularItemModel(
-      foodId: json['food_id'],
+      foodId: json['foodid'],
       name: json['name'],
-      menuId: json['menu_id'],
+      menuId: json['menuid'],
       image: json['image'],
     );
   }
 
   // Method to convert an instance to a JSON object
   Map<String, dynamic> toJson() {
-    final data = <String, dynamic>{};
-    data['food_id'] = foodId;
+    final data = Map<String, dynamic>();
+    data['foodid'] = foodId;
     data['name'] = name;
-    data['menu_id'] = menuId;
+    data['menuid'] = menuId;
     data['image'] = image;
     return data;
   }

@@ -1,38 +1,39 @@
-
 class RestaurantModel {
   String restaurantId;
-  String address;
   String name;
+  String address;
   String imageUrl;
-  String payment;
   String phone;
+  String payment;
 
   RestaurantModel({
-    this.restaurantId = '', // Thêm thuộc tính restaurantId
-    required this.address,
+    required this.restaurantId,
     required this.name,
+    required this.address,
     required this.imageUrl,
-    required this.payment,
     required this.phone,
+    required this.payment,
   });
 
   factory RestaurantModel.fromJson(Map<String, dynamic> json) {
     return RestaurantModel(
-      address: json['address'],
-      name: json['name'],
-      imageUrl: json['imageUrl'],
-      payment: json['payment'],
-      phone: json['phone'],
+      restaurantId: json['restaurantId'] ?? '',
+      name: json['name'] ?? '',
+      address: json['address'] ?? '',
+      imageUrl: json['imageUrl'] ?? '',
+      phone: json['phone'] ?? '',
+      payment: json['payment'] ?? '',
     );
   }
 
   Map<String, dynamic> toJson() {
-    final data = Map<String, dynamic>();
-    data['address'] = address;
+    final data = <String, dynamic>{};
+    data['restaurantId'] = restaurantId;
     data['name'] = name;
+    data['address'] = address;
     data['imageUrl'] = imageUrl;
-    data['payment'] = payment;
     data['phone'] = phone;
+    data['payment'] = payment;
     return data;
   }
 }
