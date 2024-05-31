@@ -21,10 +21,10 @@ class PopularItemModel {
   }
   Map<String,dynamic> toJson(){
     final data  = Map<String,dynamic>();
-    data['food_id'] = this.foodId;
-    data['name'] = this.name;
-    data['menu_id'] = this.menuId;
-    data['image'] = this.image;
+    data['food_id'] = foodId;
+    data['name'] = name;
+    data['menu_id'] = menuId;
+    data['image'] = image;
     return data;
   }
 }
