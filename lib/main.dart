@@ -1,8 +1,12 @@
+
 import 'package:auto_animated/auto_animated.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/model/restaurant_model.dart';
+import 'package:oderfoodapp_flutter/screen/restaurant_home.dart';
+import 'package:oderfoodapp_flutter/state/main_state.dart';
 import 'package:oderfoodapp_flutter/strings/main_strings.dart';
 import 'package:oderfoodapp_flutter/viewmodel/main_view_model_imp.dart';
 import 'package:oderfoodapp_flutter/widgets/main/main_widget.dart';
@@ -18,7 +22,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'abennnnn',
       theme: ThemeData(
@@ -31,6 +35,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   final viewModel = MainViewModelImp();
+  final mainStateController = Get.put(MainStateController());
 
   MyHomePage({super.key});
 
@@ -64,6 +69,7 @@ class MyHomePage extends StatelessWidget {
                 showItemInterval: Duration(milliseconds: 150),
                 showItemDuration: Duration(milliseconds: 350),
                 reAnimateOnVisibility: true,
+                
               ),
               itemCount: lst.length,
               itemBuilder: (context, index, animation) =>
@@ -87,7 +93,10 @@ class MyHomePage extends StatelessWidget {
         child: Container(
           margin: const EdgeInsets.only(top: 10),
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              mainStateController.selectedRestaurant.value = lst[index];
+              Get.to(()=>RestaurantHome());
+            },
             child: Container(
               width: double.infinity,
               height: MediaQuery.of(context).size.height / 2.5 * 1.222,

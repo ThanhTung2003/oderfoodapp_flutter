@@ -1,15 +1,11 @@
 class RestaurantModel {
-  String address;
-  String name;
-  String imageUrl;
-  String payment;
-  String phone;
-
+  String restaurantId ='', address ='',name='',imageUrl='',paymentUrl='',phone='';
+ 
   RestaurantModel({
     required this.address,
     required this.name,
     required this.imageUrl,
-    required this.payment,
+    required this.paymentUrl,
     required this.phone,
   });
 
@@ -18,7 +14,7 @@ class RestaurantModel {
       address: json['address'] ?? '',
       name: json['name'] ?? '',
       imageUrl: json['imageUrl'] ?? '',
-      payment: json['payment'] ?? '',
+      paymentUrl: json['payment'] ?? '',
       phone: json['phone'] ?? '',
     );
   }
@@ -28,7 +24,7 @@ class RestaurantModel {
       'address': address,
       'name': name,
       'imageUrl': imageUrl,
-      'payment': payment,
+      'paymentUrl': paymentUrl,
       'phone': phone,
     };
   }

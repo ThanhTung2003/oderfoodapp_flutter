@@ -5,9 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class RestaurantImageWidget extends StatelessWidget { // hình nhà hàng
   const RestaurantImageWidget({
-    Key? key,
+    super.key,
     required this.imageUrl,
-  }) : super(key: key);
+  });
 
   final String imageUrl;
 

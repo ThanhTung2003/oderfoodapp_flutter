@@ -1,0 +1,1 @@
+const mostPopularText ='Most Popular Categories';
