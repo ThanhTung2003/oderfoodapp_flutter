@@ -5,10 +5,16 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/model/restaurant_model.dart';
 import 'package:oderfoodapp_flutter/screen/restaurant_home.dart';
+import 'package:oderfoodapp_flutter/screen/splash_screen.dart';
 import 'package:oderfoodapp_flutter/state/main_state.dart';
 import 'package:oderfoodapp_flutter/strings/main_strings.dart';
 import 'package:oderfoodapp_flutter/viewmodel/main_view_model_imp.dart';
 import 'package:oderfoodapp_flutter/widgets/main/main_widget.dart';
+
+class MyColors {
+  static const Color color1 = Color(0xFF46289C); // Màu #46289C
+  static const Color color2 = Color(0xFF7A6AA6); // Màu #7A6AA6
+}
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +33,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: MyHomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => SplashScreen(),
+        '/home': (context) => MyHomePage(),
+      },
     );
   }
 }
@@ -41,6 +51,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white, // Đặt màu nền cho Scaffold
       appBar: AppBar(
         title: Text(
           restaurantText,
@@ -49,7 +60,7 @@ class MyHomePage extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         elevation: 10,
       ),
       body: FutureBuilder(
@@ -96,9 +107,10 @@ class MyHomePage extends StatelessWidget {
               mainStateController.selectedRestaurant.value = lst[index];
               Get.to(()=>RestaurantHome());
             },
-            child: SizedBox(
+            child: Container(
               width: double.infinity,
               height: MediaQuery.of(context).size.height / 2.5 * 1.18,
+              color: Colors.white, // Đặt màu nền cho Container bao quanh
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
