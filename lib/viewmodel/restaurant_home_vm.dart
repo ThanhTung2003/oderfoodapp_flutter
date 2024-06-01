@@ -4,4 +4,8 @@ abstract class RestaurantHomeViewModel{
   Future<List<PopularItemModel>> displayMostPopularByRestaurantId(
     String restaurantId
   );
+  
+  Future<List<PopularItemModel>> displayBestDealsByRestaurantId(
+    String restaurantId
+  );
 }
