@@ -14,10 +14,10 @@ class PopularItemModel {
   );
 
   PopularItemModel.fromJson(Map<String,dynamic>json){
-    foodId = json['food_id'];
-    name = json['name'];
-    menuId = json['menu_id'];
-    image = json['image'];
+    foodId = json['food_id'] == null? '' : json['food_id'];
+    name = json['name']== null? '' : json['name'];
+    menuId = json['menu_id']== null? '' : json['menu_id'];
+    image = json['image']== null? '' : json['image'];
   }
   Map<String,dynamic> toJson(){
     final data  = Map<String,dynamic>();

@@ -1,9 +1,8 @@
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RestaurantImageWidget extends StatelessWidget { // hình nhà hàng
+class RestaurantImageWidget extends StatelessWidget {
   const RestaurantImageWidget({
     super.key,
     required this.imageUrl,
@@ -13,9 +12,9 @@ class RestaurantImageWidget extends StatelessWidget { // hình nhà hàng
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      width: double.infinity,
       height: 250,
-      //width:400 ,
       child: Card(
         semanticContainer: true,
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -32,7 +31,8 @@ class RestaurantImageWidget extends StatelessWidget { // hình nhà hàng
     );
   }
 }
-class RestaurantInfoCard extends StatelessWidget { //info nhà hàng
+
+class RestaurantInfoCard extends StatelessWidget {
   final String name;
   final String address;
 
