@@ -1,1 +1,1 @@
-const restaurantText = 'Quản lý nhà hàng ABEN';
+const restaurantText = 'Nhà hàng gần đây';

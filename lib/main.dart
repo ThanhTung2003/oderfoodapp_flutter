@@ -1,4 +1,3 @@
-
 import 'package:auto_animated/auto_animated.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -97,9 +96,9 @@ class MyHomePage extends StatelessWidget {
               mainStateController.selectedRestaurant.value = lst[index];
               Get.to(()=>RestaurantHome());
             },
-            child: Container(
+            child: SizedBox(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height / 2.5 * 1.222,
+              height: MediaQuery.of(context).size.height / 2.5 * 1.18,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
