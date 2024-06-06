@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/model/restaurant_model.dart';
-import 'package:oderfoodapp_flutter/screen/restaurant_home.dart';
+import 'package:oderfoodapp_flutter/screen/restaurant_home_detail.dart';
 import 'package:oderfoodapp_flutter/screen/splash_screen.dart';
 import 'package:oderfoodapp_flutter/state/main_state.dart';
 import 'package:oderfoodapp_flutter/strings/main_strings.dart';
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => SplashScreen(),
+        '/': (context) => const SplashScreen(),
         '/home': (context) => MyHomePage(),
       },
     );

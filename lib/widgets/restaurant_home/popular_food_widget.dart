@@ -19,6 +19,7 @@ class PopularFoodWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: avoid_unnecessary_containers
     return Container(
       child: FutureBuilder(
         future: viewModel.displayMostPopularByRestaurantId(
