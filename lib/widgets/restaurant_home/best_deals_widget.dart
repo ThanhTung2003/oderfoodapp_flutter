@@ -18,6 +18,7 @@ class BestDealsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: avoid_unnecessary_containers
     return Container(
       child: FutureBuilder(
         future: viewModel.displayBestDealsByRestaurantId(
@@ -39,7 +40,7 @@ class BestDealsWidget extends StatelessWidget {
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         child: Stack(
                           children: [
-                            Container(
+                            SizedBox(
                               width: double.infinity,
                               height: double.infinity,
                               child: CachedNetworkImage(
@@ -71,7 +72,7 @@ class BestDealsWidget extends StatelessWidget {
               }).toList(),
               options: CarouselOptions(
                 autoPlay: true,
-                autoPlayAnimationDuration: const Duration(seconds: 3),
+                autoPlayAnimationDuration: const Duration(seconds: 2),
                 autoPlayCurve: Curves.easeIn,
                 height: double.infinity,
               ),
