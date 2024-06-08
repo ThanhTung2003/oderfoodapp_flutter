@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:oderfoodapp_flutter/screen/log_in.dart';
 import 'dart:async';
 
-import 'package:oderfoodapp_flutter/main.dart'; // Thêm thư viện này để sử dụng Timer
+class MyColors {
+  static const Color color1 = Color(0xFF46289C); // Màu #46289C
+  static const Color color2 = Color(0xFF7A6AA6); // Màu #7A6AA6
+}
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _SplashScreenState createState() => _SplashScreenState();
 }
 
@@ -16,7 +19,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 2), () {
-      Navigator.of(context).pushReplacementNamed('/home');
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+      );
     });
   }
 

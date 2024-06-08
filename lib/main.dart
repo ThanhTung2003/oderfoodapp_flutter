@@ -11,10 +11,7 @@ import 'package:oderfoodapp_flutter/strings/main_strings.dart';
 import 'package:oderfoodapp_flutter/viewmodel/main_view_model_imp.dart';
 import 'package:oderfoodapp_flutter/widgets/main/main_widget.dart';
 
-class MyColors {
-  static const Color color1 = Color(0xFF46289C); // Màu #46289C
-  static const Color color2 = Color(0xFF7A6AA6); // Màu #7A6AA6
-}
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
