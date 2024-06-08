@@ -56,8 +56,8 @@ class PopularFoodWidget extends StatelessWidget {
                           children: [
                             CircleAvatar(
                               backgroundImage: NetworkImage(lstPopular[index].image),
-                              minRadius: 40,
-                              maxRadius: 50,
+                              minRadius: 55,
+                              maxRadius: 65,
                             ),
                             const SizedBox(height: 10,),
                             Text(

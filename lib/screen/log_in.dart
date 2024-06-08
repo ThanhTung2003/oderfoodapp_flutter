@@ -125,7 +125,7 @@ class LoginScreen extends StatelessWidget {
                                 MaterialStateProperty.all(Colors.white),
                             padding: MaterialStateProperty.all(
                                 const EdgeInsets.symmetric(
-                                    vertical: 20.0, horizontal: 20.0)),
+                                    vertical: 20.0, horizontal: 60.0)),
                             textStyle: MaterialStateProperty.all(
                                 const TextStyle(fontSize: 25)),
                             side: MaterialStateProperty.all(

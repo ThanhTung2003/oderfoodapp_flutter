@@ -34,7 +34,7 @@ class BestDealsWidget extends StatelessWidget {
                   builder: (BuildContext context) {
                     return Container(
                       width: MediaQuery.of(context).size.width,
-                      margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                      margin: const EdgeInsets.symmetric(horizontal: 10.0),
                       child: Card(
                         semanticContainer: true,
                         clipBehavior: Clip.antiAliasWithSaveLayer,
