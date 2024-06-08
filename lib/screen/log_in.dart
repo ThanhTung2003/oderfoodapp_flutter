@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oderfoodapp_flutter/main.dart';
-import 'package:oderfoodapp_flutter/screen/splash_screen.dart';
+import 'package:oderfoodapp_flutter/screen/register_screen.dart'; // Import màn hình đăng ký
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -41,12 +41,17 @@ class LoginScreen extends StatelessWidget {
               children: <Widget>[
                 Container(
                   padding: const EdgeInsets.symmetric(vertical: 20.0),
-                  child: ClipOval(
-                    child: Image.asset(
-                      'asset/logo.jpg',
-                      height: 300,
-                      width: 300,
-                      fit: BoxFit.cover,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 4.0, // Độ rộng của viền trắng
+                      ),
+                    ),
+                    child: const CircleAvatar(
+                      radius: 150, // Điều chỉnh bán kính theo ý bạn
+                      backgroundImage: AssetImage('asset/logo.jpg'),
                     ),
                   ),
                 ),
@@ -97,7 +102,7 @@ class LoginScreen extends StatelessWidget {
                         fontSize: 20.0,
                         color: Colors.white,
                       ),
-                      labelText: 'Pass',
+                      labelText: 'Mật khẩu',
                     ),
                   ),
                 ),
@@ -105,33 +110,55 @@ class LoginScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(
                       vertical: 7.0, horizontal: 5.0),
                   margin: const EdgeInsets.symmetric(horizontal: 70.0),
-                  child: SizedBox(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) => MyHomePage()),
-                        );
-                      },
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        padding: MaterialStateProperty.all(
-                            const EdgeInsets.symmetric(
-                                vertical: 20.0, horizontal: 20.0)),
-                        textStyle: MaterialStateProperty.all(
-                            const TextStyle(fontSize: 25)),
-                        side: MaterialStateProperty.all(
-                            const BorderSide(color: Colors.black, width: 1.0)),
-                      ),
-                      child: const Text(
-                        'Đăng Nhập',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w900,
-                          color: Colors.black,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (context) => MyHomePage()),
+                            );
+                          },
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                            padding: MaterialStateProperty.all(
+                                const EdgeInsets.symmetric(
+                                    vertical: 20.0, horizontal: 20.0)),
+                            textStyle: MaterialStateProperty.all(
+                                const TextStyle(fontSize: 25)),
+                            side: MaterialStateProperty.all(
+                                const BorderSide(color: Colors.black, width: 1.0)),
+                          ),
+                          child: const Text(
+                            'Đăng Nhập',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w900,
+                              color: Colors.black,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      const SizedBox(height: 10),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const RegisterScreen()),
+                          );
+                        },
+                        child: const Text(
+                          'New Account',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

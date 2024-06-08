@@ -106,7 +106,7 @@ class MyHomePage extends StatelessWidget {
             },
             child: Container(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height / 2.5 * 1.18,
+              height: MediaQuery.of(context).size.height / 2.5 * 0.85,
               color: Colors.white, // Đặt màu nền cho Container bao quanh
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

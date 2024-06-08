@@ -46,7 +46,7 @@ class RestaurantInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(5.0),
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

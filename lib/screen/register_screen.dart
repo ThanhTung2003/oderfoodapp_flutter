@@ -15,7 +15,7 @@ class RegisterScreen extends StatelessWidget {
           'Đăng Kí',
           textAlign: TextAlign.left,
           style: TextStyle(
-            fontSize: 50.0,
+            fontSize: 30.0,
             fontWeight: FontWeight.w900,
             color: Colors.white,
           ),
@@ -44,7 +44,7 @@ class RegisterScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 40.0),
                   child: ClipOval(
                     child: Image.asset(
-                      'assets/logo.jpg',
+                      'asset/logo.jpg',
                       height: 300,
                       width: 300,
                       fit: BoxFit.cover,
@@ -98,7 +98,7 @@ class RegisterScreen extends StatelessWidget {
                         fontSize: 20.0,
                         color: Colors.white,
                       ),
-                      labelText: 'Pass',
+                      labelText: 'Mật khẩu',
                     ),
                   ),
                 ),
@@ -124,7 +124,7 @@ class RegisterScreen extends StatelessWidget {
                         fontSize: 20.0,
                         color: Colors.white,
                       ),
-                      labelText: 'R-Pass',
+                      labelText: 'Nhập lại mật khẩu',
                     ),
                   ),
                 ),
@@ -153,7 +153,7 @@ class RegisterScreen extends StatelessWidget {
                             const BorderSide(color: Colors.black, width: 1.0)),
                       ),
                       child: const Text(
-                        'Sign up',
+                        'Đăng Kí',
                         style: TextStyle(
                           fontWeight: FontWeight.w900,
                           color: Colors.black,
@@ -170,8 +170,8 @@ class RegisterScreen extends StatelessWidget {
     );
   }
 }
+
 class MyColors {
   static const Color color1 = Color(0xFF46289C); // Màu #46289C
   static const Color color2 = Color(0xFF7A6AA6); // Màu #7A6AA6
-  // static const Color color3 = Color(0x644AB5);//Màu #644AB5
 }
