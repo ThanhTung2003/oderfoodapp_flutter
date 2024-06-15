@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:oderfoodapp_flutter/const/const.dart';
+import 'package:oderfoodapp_flutter/strings/restaurant_home_strings.dart';
+import 'package:oderfoodapp_flutter/viewmodel/menu_vm/menu_viewmodel_imp.dart';
 import 'package:oderfoodapp_flutter/widgets/menu/categories_menu_widget.dart';
 import 'package:oderfoodapp_flutter/widgets/menu/home_menu_widget.dart';
 
 class MenuScreen extends StatelessWidget {
   final ZoomDrawerController zoomDrawerController;
+  final viewmodel = MenuViewModelImp();
 
-  const MenuScreen({super.key, required this.zoomDrawerController});
+   MenuScreen({super.key, required this.zoomDrawerController});
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +48,15 @@ class MenuScreen extends StatelessWidget {
             // const Divider(
             // thickness: 1,
             // ),
-            CategoriesHomeWidget(zoomDrawerController: zoomDrawerController),
+            MenuWidget(
+              icon: Icons.list,
+              menuName: categoryText,
+              callback: viewmodel.navigateCategories, 
+              zoomDrawerController: zoomDrawerController,
+            ),
           ],
         ),
       ),
     );
   }
 }
-
