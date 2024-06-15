@@ -5,7 +5,7 @@ import 'package:oderfoodapp_flutter/viewmodel/menu_vm/menu_viewmodel.dart';
 class MenuViewModelImp implements MenuViewModel {
   @override
   void navigateCategories() {
-    Get.to(()=>const CategoryScreen());
+    Get.to(()=>CategoryScreen());
   }
 
 }
