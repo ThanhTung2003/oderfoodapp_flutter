@@ -53,12 +53,12 @@ class RestaurantInfoCard extends StatelessWidget {
           children: [
             Text(
               name,
-              style: GoogleFonts.jetBrainsMono(
+              style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w900),
             ),
             Text(
               address,
-              style: GoogleFonts.jetBrainsMono(
+              style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w600),
             ),
           ],

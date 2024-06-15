@@ -1,18 +1,23 @@
 import 'package:auto_animated/auto_animated.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/const/const.dart';
 import 'package:oderfoodapp_flutter/model/category_model.dart';
+import 'package:oderfoodapp_flutter/screen/food_list_screen.dart';
+import 'package:oderfoodapp_flutter/state/category_state.dart';
 import 'package:oderfoodapp_flutter/widgets/common/common_widgets.dart';
 
 class CategoryListWidget extends StatelessWidget {
   const CategoryListWidget({
     super.key,
     required this.lst,
+    required this.categoryStateController,
   });
 
   final List<CategoryModel> lst;
+  final CategoryStateController categoryStateController;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +36,10 @@ class CategoryListWidget extends StatelessWidget {
               mainAxisSpacing: 1,
             ),
             itemBuilder: animationItemBuilder((index) => InkWell(
-              onTap: () {},
+              onTap: () {
+                categoryStateController.selectedCategory.value = lst[index];
+                Get.to(()=>FoodListScreen());
+              },
               child: Card(
                 semanticContainer: true,
                 clipBehavior: Clip.antiAliasWithSaveLayer,

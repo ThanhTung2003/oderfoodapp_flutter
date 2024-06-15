@@ -56,7 +56,7 @@ class BestDealsWidget extends StatelessWidget {
                             Center(
                               child: Text(
                                 e.name,
-                                style: GoogleFonts.jetBrainsMono(
+                                style: GoogleFonts.poppins(
                                   fontSize: 24,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,

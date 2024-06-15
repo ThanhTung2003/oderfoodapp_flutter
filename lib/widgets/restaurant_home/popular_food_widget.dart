@@ -62,7 +62,7 @@ class PopularFoodWidget extends StatelessWidget {
                             const SizedBox(height: 10,),
                             Text(
                               lstPopular[index].name,
-                              style: GoogleFonts.jetBrainsMono(),
+                              style: GoogleFonts.poppins(),
                             ),
                           ],
                         ),

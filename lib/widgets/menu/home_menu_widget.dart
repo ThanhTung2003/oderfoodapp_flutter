@@ -29,7 +29,7 @@ class HomeMenuWidget extends StatelessWidget {
             ),
             Text(
               homeText,
-              style: GoogleFonts.jetBrainsMono(
+              style: GoogleFonts.poppins(
                   fontSize: 18,
                   color: Colors.white,
                   fontWeight: FontWeight.w900),
