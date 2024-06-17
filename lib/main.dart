@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/model/restaurant_model.dart';
+import 'package:oderfoodapp_flutter/screen/ScreenDetailFood.dart';
 import 'package:oderfoodapp_flutter/screen/restaurant_home_detail.dart';
 import 'package:oderfoodapp_flutter/screen/splash_screen.dart';
 import 'package:oderfoodapp_flutter/state/main_state.dart';
@@ -32,8 +33,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const SplashScreen(),
-        '/home': (context) => MyHomePage(),
+        '/': (context) =>  ScreenDetail(),
+        '/home': (context) => SplashScreen(),
       },
     );
   }
@@ -106,7 +107,7 @@ class MyHomePage extends StatelessWidget {
             },
             child: Container(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height / 2.5 * 0.85,
+              height: MediaQuery.of(context).size.height / 2.5 * 0.95,
               color: Colors.white, // Đặt màu nền cho Container bao quanh
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
