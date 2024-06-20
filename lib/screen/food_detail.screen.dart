@@ -1,15 +1,19 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/state/category_state.dart';
+import 'package:oderfoodapp_flutter/state/food_detail_state.dart';
 import 'package:oderfoodapp_flutter/state/food_list_state.dart';
+import 'package:oderfoodapp_flutter/widgets/food_detail/food_detail_description.dart';
+import 'package:oderfoodapp_flutter/widgets/food_detail/food_detail_image.dart';
+import 'package:oderfoodapp_flutter/widgets/food_detail/food_detail_name.dart';
 
 class FoodListDetailScreen extends StatelessWidget {
   FoodListDetailScreen({super.key});
 
   final CategoryStateController categoryStateController = Get.find();
   final FoodListStateController foodListStateController = Get.find();
+  final FoodDetailStateController foodDetailStateController = Get.put(FoodDetailStateController());
 
   @override
   Widget build(BuildContext context) {
@@ -30,32 +34,29 @@ class FoodListDetailScreen extends StatelessWidget {
                 bottom: PreferredSize(
                   preferredSize:
                       Size.square(MediaQuery.of(context).size.height / 3),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        width: double.infinity, //max chieu rong
-                        height: (MediaQuery.of(context).size.height / 3) * 0.95,
-                        child: CachedNetworkImage(
-                          imageUrl: foodListStateController
-                              .selectedFood.value.image,
-                          fit: BoxFit.cover,
-                          errorWidget: (context, url, error) => const Center(
-                            child: Icon(Icons.image),
-                          ),
-                          progressIndicatorBuilder: (context, url,
-                                  downloadProgress) =>
-                              const Center(child: CircularProgressIndicator()),
-                        ),
-                      )
-                    ],
-                  ),
+                  child: FoodDetailImageWidget(
+                      foodListStateController: foodListStateController),
                 ),
               )
             ];
           },
-          body: Container(),
+          body: Container(
+            margin: const EdgeInsets.only(top: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                FoodDetailNameWidget(
+                  foodDetailStateController: foodDetailStateController,
+                    foodListStateController: foodListStateController),
+                FoodDetailDescriptionWidget(foodListStateController: foodListStateController)
+              ],
+            ),
+          ),
         ),
       ),
     );
   }
 }
+
+

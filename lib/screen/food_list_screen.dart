@@ -39,13 +39,15 @@ class FoodListScreen extends StatelessWidget {
               scrollDirection: Axis.vertical,
               itemCount:
                   categoryStateController.selectedCategory.value.foods.length,
-              itemBuilder: animationItemBuilder((index) => InkWell(
+              itemBuilder: animationItemBuilder((index) => 
+               InkWell(
                     onTap: () {
                       foodListStateController.selectedFood.value =
                           categoryStateController
                               .selectedCategory.value.foods[index];
                           Get.to(()=>FoodListDetailScreen());
                     },
+                    child: Hero( tag:categoryStateController.selectedCategory.value.foods[index].name,
                     child: SizedBox(
                       height: MediaQuery.of(context).size.height / 3,
                       child: Card(
@@ -124,10 +126,11 @@ class FoodListScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                    ),
-                  )),
+                    )),
+                  )), )
+              
             ),
-          )
+          
         ],
       ),
     );
