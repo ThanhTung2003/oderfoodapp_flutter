@@ -11,3 +11,6 @@ const CATEGORY_REF ='Category';
 const COLOR_MENU_BACKGROUND = 0xFF7A6AA6;
 const COLOR_ICON_DRAWER = 0xFF7F0000;
 const COLOR_OVERPLAY =0xAA40404A;
+
+const FAB_FAV_TAG = 'fav';
+const FAB_CART_TAG = 'Cart';

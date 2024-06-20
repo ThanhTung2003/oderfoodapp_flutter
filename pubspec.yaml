@@ -43,6 +43,15 @@ dependencies:
   auto_animated: ^3.2.0
   carousel_slider: ^4.2.1
   flutter_zoom_drawer: ^3.2.0
+  flutter_elegant_number_button: ^0.0.6
+  flutter_rating_bar: ^4.0.1
+
+
+  
+  # flutter_elegant_number_button:
+  #   git:
+  #     url: https://github.com/ThanhTung2003/oderfoodapp_flutter.git
+  #     ref: main # hoặc nhánh mà bạn đã thực hiện thay đổi
 
 dev_dependencies:
   flutter_test:
