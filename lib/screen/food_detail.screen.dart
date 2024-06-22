@@ -8,6 +8,7 @@ import 'package:oderfoodapp_flutter/widgets/food_detail/food_detail_description.
 import 'package:oderfoodapp_flutter/widgets/food_detail/food_detail_image.dart';
 import 'package:oderfoodapp_flutter/widgets/food_detail/food_detail_name.dart';
 import 'package:oderfoodapp_flutter/widgets/food_detail/food_detail_size.dart';
+import 'package:oderfoodapp_flutter/widgets/food_detail/food_detail_topping.dart';
 
 class FoodListDetailScreen extends StatelessWidget {
   FoodListDetailScreen({super.key});
@@ -55,8 +56,14 @@ class FoodListDetailScreen extends StatelessWidget {
                     foodListStateController: foodListStateController),
                 // Kiểm tra nếu đồ ăn có size
                 foodListStateController.selectedFood.value.size.isNotEmpty
-                    ? Food_Size_Widget(foodListStateController: foodListStateController, foodDetailStateController: foodDetailStateController)
-                    : Container()
+                    ? FoodSizeWidget(
+                        foodListStateController: foodListStateController,
+                        foodDetailStateController: foodDetailStateController)
+                    : Container(),
+                // Topping
+                foodListStateController.selectedFood.value.addon.isNotEmpty
+                    ? FoodTopping(foodListStateController: foodListStateController, foodDetailStateController: foodDetailStateController)
+                    : Container(),
               ],
             ),
           ),

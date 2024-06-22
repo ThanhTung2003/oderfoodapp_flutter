@@ -7,9 +7,9 @@ import 'package:oderfoodapp_flutter/model/size_model.dart';
 import 'package:oderfoodapp_flutter/state/food_detail_state.dart';
 import 'package:oderfoodapp_flutter/state/food_list_state.dart';
 
-class Food_Size_Widget extends StatelessWidget {
+class FoodSizeWidget extends StatelessWidget {
   
-  const Food_Size_Widget({
+  const FoodSizeWidget({
     super.key,
     required this.foodListStateController,
     required this.foodDetailStateController,
