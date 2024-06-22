@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oderfoodapp_flutter/Theme_UI/darkmode.dart';
 import 'package:oderfoodapp_flutter/screen/cart_screen.dart';
+import 'package:oderfoodapp_flutter/screen/homesrceen.dart';
 import 'package:oderfoodapp_flutter/screen/restaurant_screen.dart';
 import 'package:oderfoodapp_flutter/screen/splash_screen.dart';
 import 'package:oderfoodapp_flutter/state/food_detail_state.dart';
@@ -77,22 +78,24 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [
-    const Card(
-      shadowColor: Colors.transparent,
-      margin: EdgeInsets.all(8.0),
-      child: SizedBox.expand(
-        child: Center(
-          child: Text(
-            'Menu Screen',
-            style: TextStyle(),
-          ),
-        ),
-      ),
-    ),
+    // const Card(
+    //   shadowColor: Colors.transparent,
+    //   margin: EdgeInsets.all(8.0),
+    //   child: SizedBox.expand(
+    //     child: Center(
+    //       child: Text(
+    //         'Menu Screen',
+    //         style: TextStyle(),
+    //       ),
+    //     ),
+    //   ),
+    // ),
+    
+    HomeScreen(),
     RestaurantScreen(),
 
     ScreenCartFood(foodDetailStateController: FoodDetailStateController(),),
-
+    
     Container(
       color: Colors.blueAccent,
     )
