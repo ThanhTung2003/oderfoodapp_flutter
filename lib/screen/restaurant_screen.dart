@@ -23,7 +23,7 @@ class RestaurantScreen extends StatelessWidget{
         title: Text(
           restaurantText,
           style: GoogleFonts.roboto(
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w700,
             color: Colors.black,
           ),
         ),

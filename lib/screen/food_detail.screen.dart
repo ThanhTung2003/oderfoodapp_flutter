@@ -25,7 +25,7 @@ class FoodListDetailScreen extends StatelessWidget {
               SliverAppBar(
                 title: Text(
                   foodListStateController.selectedFood.value.name,
-                  style: GoogleFonts.jetBrainsMono(color: Colors.black),
+                  style: GoogleFonts.roboto(color: Colors.black),
                 ),
                 elevation: 10,
                 backgroundColor: Colors.white,
@@ -41,7 +41,7 @@ class FoodListDetailScreen extends StatelessWidget {
             ];
           },
           body: Container(
-            margin: const EdgeInsets.only(top: 10),
+            margin: const EdgeInsets.only(top: 5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,

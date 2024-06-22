@@ -18,9 +18,9 @@ class FoodDetailNameWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.white,
-      elevation: 12,
-      child: SizedBox(
+      elevation: 0,
+      child: Container(
+        color: Colors.white,
         width: double.infinity,
         child: Padding(
           padding: const EdgeInsets.all(16),

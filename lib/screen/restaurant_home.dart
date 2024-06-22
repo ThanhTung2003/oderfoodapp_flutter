@@ -22,7 +22,7 @@ class RestaurantHomeDetail extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             mainStateController.selectedRestaurant.value.name,
-            style: GoogleFonts.jetBrainsMono( 
+            style: GoogleFonts.roboto( 
                 color: Colors.black, fontWeight: FontWeight.w900),
           ),
           backgroundColor: Colors.white,

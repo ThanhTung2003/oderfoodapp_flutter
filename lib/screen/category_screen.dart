@@ -21,7 +21,7 @@ class CategoryScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           categoryText,
-          style: GoogleFonts.poppins(color: Colors.black),
+          style: GoogleFonts.roboto(color: Colors.black),
         ),
         elevation: 10,
         backgroundColor: const Color(0xFFA696D6),

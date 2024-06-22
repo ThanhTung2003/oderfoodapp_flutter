@@ -61,7 +61,7 @@ class CategoryListWidget extends StatelessWidget {
                       child: Text(
                         lst[index].name,
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.poppins(
+                        style: GoogleFonts.roboto(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,

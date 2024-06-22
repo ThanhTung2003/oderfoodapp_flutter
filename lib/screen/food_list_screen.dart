@@ -22,7 +22,7 @@ class FoodListScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           categoryStateController.selectedCategory.value.name,
-          style: GoogleFonts.poppins(color: Colors.black),
+          style: GoogleFonts.roboto(color: Colors.black),
         ),
         elevation: 10,
         backgroundColor: const Color(0xFFA696D6),
@@ -86,7 +86,7 @@ class FoodListScreen extends StatelessWidget {
                                         categoryStateController.selectedCategory
                                             .value.foods[index].name,
                                         textAlign: TextAlign.center,
-                                        style: GoogleFonts.poppins(
+                                        style: GoogleFonts.roboto(
                                           fontSize: 18,
                                           color: Colors.white,
                                         ),
@@ -94,7 +94,7 @@ class FoodListScreen extends StatelessWidget {
                                       Text(
                                         'Giá: ${categoryStateController.selectedCategory.value.foods[index].price} vnđ',
                                         textAlign: TextAlign.center,
-                                        style: GoogleFonts.poppins(
+                                        style: GoogleFonts.roboto(
                                           fontSize: 18,
                                           color: Colors.white,
                                         ),

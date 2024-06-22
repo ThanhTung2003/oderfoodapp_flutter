@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
         centerTitle: true,
         title: const Text(
           'Đăng Nhập',
-          style: TextStyle(
+          style:  TextStyle(
             fontSize: 30.0,
             fontWeight: FontWeight.w900,
             color: Colors.white,

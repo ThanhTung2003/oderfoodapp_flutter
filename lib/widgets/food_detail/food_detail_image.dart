@@ -47,7 +47,7 @@ class FoodDetailImageWidget extends StatelessWidget {
                   elevation: 10,
                   child: const Icon(
                     Icons.favorite_border,
-                    color: Colors.black,),
+                    color: Colors.amber,),
                 ),
                 FloatingActionButton(
                   heroTag: FAB_CART_TAG,
@@ -56,7 +56,7 @@ class FoodDetailImageWidget extends StatelessWidget {
                   elevation: 10,
                   child: const Icon(
                     Icons.add_shopping_cart,
-                    color: Colors.black,),
+                    color: Colors.amber,),
                 )
               ],
             ),
