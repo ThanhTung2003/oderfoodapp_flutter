@@ -29,7 +29,7 @@ class appbar_homefood extends StatelessWidget {
             ),
           ),
           IconButton(
-            padding: EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(left: 10),
             icon: ClipOval(
               child: Image.asset(
                 'asset/logo.jpg',

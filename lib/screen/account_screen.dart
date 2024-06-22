@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:folding_cell/folding_cell/widget.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,6 +12,8 @@ class MyColors {
   static const Color color2 = Color(0xFF7A6AA6); // Màu #7A6AA6
 }
 class SrceenAccount extends StatefulWidget {
+  const SrceenAccount({super.key});
+
   @override
   State<SrceenAccount> createState() => _SrceenAccount();
 }
@@ -45,22 +49,20 @@ class _SrceenAccount extends State<SrceenAccount> {
                       ),
                     ),
                   ),
-                  Container(
-                    child: IconButton(
-                      icon: ClipOval(
-                        child: Image.asset(
-                          'asset/logo.jpg',
-                          height: 50,
-                          width: 50,
-                        ),
+                  IconButton(
+                    icon: ClipOval(
+                      child: Image.asset(
+                        'asset/logo.jpg',
+                        height: 50,
+                        width: 50,
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => SrceenAccount()),
-                        );
-                      },
                     ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SrceenAccount()),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -103,7 +105,7 @@ class _SrceenAccount extends State<SrceenAccount> {
                    color: Colors.black.withOpacity(0.1),
                    spreadRadius: 2,
                    blurRadius: 15,
-                   offset: Offset(0, 7), // changes position of shadow
+                   offset: const Offset(0, 7), // changes position of shadow
                   ),
                 ],
               ),
@@ -114,8 +116,8 @@ class _SrceenAccount extends State<SrceenAccount> {
                 frontWidget: _buildFrontWidget2(),
                 innerWidget: _buildInnerWidget2(),
                 cellSize: Size(MediaQuery.of(context).size.width, 140),
-                padding: EdgeInsets.all(15),
-                animationDuration: Duration(milliseconds: 500),
+                padding: const EdgeInsets.all(15),
+                animationDuration: const Duration(milliseconds: 500),
                 borderRadius: 10,
                 onOpen: () => print('cell opened 2'),
                 onClose: () => print('cell closed 2'),
@@ -131,7 +133,7 @@ class _SrceenAccount extends State<SrceenAccount> {
                    color: Colors.black.withOpacity(0.1),
                    spreadRadius: 2,
                    blurRadius: 15,
-                   offset: Offset(0, 7), // changes position of shadow
+                   offset: const Offset(0, 7), // changes position of shadow
                    ),
                  ],
                ),
@@ -143,8 +145,8 @@ class _SrceenAccount extends State<SrceenAccount> {
                 frontWidget: _buildFrontWidget3(),
                 innerWidget: _buildInnerWidget3(),
                 cellSize: Size(MediaQuery.of(context).size.width, 140),
-                padding: EdgeInsets.all(15),
-                animationDuration: Duration(milliseconds: 500),
+                padding: const EdgeInsets.all(15),
+                animationDuration: const Duration(milliseconds: 500),
                 borderRadius: 10,
                 onOpen: () => print('cell opened 3'),
                 onClose: () => print('cell closed 3'),
@@ -168,7 +170,7 @@ class _SrceenAccount extends State<SrceenAccount> {
             child: Text(
               "Tài Khoản&Bảo Mật",
               style: GoogleFonts.roboto(
-                color: Color(0xFF2e282a),
+                color: const Color(0xFF2e282a),
                 fontSize: 35.0,
                 fontWeight: FontWeight.w700,
               ),
@@ -179,6 +181,10 @@ class _SrceenAccount extends State<SrceenAccount> {
             bottom: 10,
             child: TextButton(
               onPressed: () => _foldingCellKey1.currentState?.toggleFold(),
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.white,
+                minimumSize: const Size(80, 40),
+              ),
               child: Text(
                 "MỞ 1",
                 style: GoogleFonts.poppins(
@@ -186,10 +192,6 @@ class _SrceenAccount extends State<SrceenAccount> {
                   fontWeight : FontWeight.w600,
                   
                 ),
-              ),
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.white,
-                minimumSize: Size(80, 40),
               ),
             ),
           )
@@ -200,68 +202,63 @@ class _SrceenAccount extends State<SrceenAccount> {
 
   Widget _buildInnerWidget1() {
     return Container(
-      color: Color(0xFFecf2f9),
-      padding: EdgeInsets.only(top: 10),
+      color: const Color(0xFFecf2f9),
+      padding: const EdgeInsets.only(top: 10),
       child: Stack(
         children: [
-           Container(
-          child: Column(
-            children: [
-              Align(alignment: Alignment.topLeft,
-              child: 
-              Container(
-              child:  
-                  TextButton(
-                    onPressed: () {
-                      // Xử lý sự kiện khi nút được nhấn
-                    },
-                    child: Text(
-                      "Thông Tin Tài Khoản",
-                      style: GoogleFonts.poppins(
-                        color: Color(0xFF2e282a),
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ),  
-              ),
-              ),        
-             TextButton(
-            onPressed: () {
-              // Xử lý sự kiện khi nút được nhấn
-            },
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: 
-                Text(
-                  "Đổi Mật Khẩu",
-                  style: GoogleFonts.poppins(
-                    color: Color(0xFF2e282a),
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-            ),
-            ) 
-             ] ,
-          )
-    ) ,
+           Column(
+             children: [
+               Align(alignment: Alignment.topLeft,
+               child: 
+               TextButton(
+                 onPressed: () {
+                   // Xử lý sự kiện khi nút được nhấn
+                 },
+                 child: Text(
+                   "Thông Tin Tài Khoản",
+                   style: GoogleFonts.poppins(
+                     color: const Color(0xFF2e282a),
+                     fontSize: 25.0,
+                     fontWeight: FontWeight.bold,
+                   ),
+                 )
+               ),
+               ),        
+              TextButton(
+             onPressed: () {
+               // Xử lý sự kiện khi nút được nhấn
+             },
+             child: Align(
+               alignment: Alignment.topLeft,
+               child: 
+                 Text(
+                   "Đổi Mật Khẩu",
+                   style: GoogleFonts.poppins(
+                     color: const Color(0xFF2e282a),
+                     fontSize: 25.0,
+                     fontWeight: FontWeight.bold,
+                   ),
+                 ),
+             ),
+             ) 
+              ] ,
+           ) ,
      Positioned(
             right: 10,
             bottom: 10,
             child: TextButton(
               onPressed: () => _foldingCellKey1?.currentState?.toggleFold(),
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.white,
+                minimumSize: const Size(80, 40),
+              ),
               child: Text(
                 "Đóng 1",
                 style: GoogleFonts.roboto(
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                     fontSize: 15
                   ),
                 ),
-              ),
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.white,
-                minimumSize: Size(80, 40),
               ),
             ),
           ),

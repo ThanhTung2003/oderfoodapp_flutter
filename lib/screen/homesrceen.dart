@@ -60,7 +60,7 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         
         children: [
-          appbar_homefood(),
+          const appbar_homefood(),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Align(
@@ -104,12 +104,9 @@ class HomeScreen extends StatelessWidget {
           ),
           ItemSrcollHomeFood(),
           DiscountWidgetHomeFood(),
-          Align(
+          const Align(
             alignment: Alignment.bottomLeft,
-            child: Container(
-              child: 
-              Popular_widget_homefood(),
-            ), 
+            child: Popular_widget_homefood(), 
           ),
         ],
       ),

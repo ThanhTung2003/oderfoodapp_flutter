@@ -12,7 +12,8 @@ class MyColors {
 
 
 class DiscountWidgetHomeFood extends StatelessWidget {
-  const DiscountWidgetHomeFood({Key? key});
+
+  const DiscountWidgetHomeFood({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,11 +1,10 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 
 // ignore: camel_case_types
 class ItemSrcollHomeFood extends StatelessWidget{
-       ItemSrcollHomeFood({super.key});
+       const ItemSrcollHomeFood({super.key});
       
   @override
   Widget build(BuildContext context){

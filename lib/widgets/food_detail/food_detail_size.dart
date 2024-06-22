@@ -6,6 +6,7 @@ import 'package:oderfoodapp_flutter/state/food_detail_state.dart';
 import 'package:oderfoodapp_flutter/state/food_list_state.dart';
 
 class Food_Size_Widget extends StatelessWidget {
+  
   const Food_Size_Widget({
     super.key,
     required this.foodListStateController,
