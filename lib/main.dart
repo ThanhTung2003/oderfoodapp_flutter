@@ -5,6 +5,7 @@ import 'package:oderfoodapp_flutter/Theme_UI/darkmode.dart';
 import 'package:oderfoodapp_flutter/screen/cart_screen.dart';
 import 'package:oderfoodapp_flutter/screen/restaurant_screen.dart';
 import 'package:oderfoodapp_flutter/screen/splash_screen.dart';
+import 'package:oderfoodapp_flutter/state/food_detail_state.dart';
 
 
 Future<void> main() async {
@@ -90,7 +91,7 @@ class NavigationController extends GetxController {
     ),
     RestaurantScreen(),
 
-    const Screen_cart_food(),
+    ScreenCartFood(foodDetailStateController: FoodDetailStateController(),),
 
     Container(
       color: Colors.blueAccent,

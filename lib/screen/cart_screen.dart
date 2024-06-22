@@ -1,7 +1,10 @@
 // ignore: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_elegant_number_button/flutter_elegant_number_button.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oderfoodapp_flutter/state/food_detail_state.dart';
 
 class MyColors {
   static Color color1 = const Color(0xFF46289C); // Màu #46289C
@@ -11,11 +14,18 @@ class MyColors {
   static const Color color5 = Color(0xFF53871F);
 }
 
-class Screen_cart_food extends StatelessWidget {
-  const Screen_cart_food({super.key});
+class ScreenCartFood extends StatelessWidget {
 
+ 
+
+  final FoodDetailStateController foodDetailStateController;
+
+  const ScreenCartFood({super.key, required this.foodDetailStateController});
+
+  
   @override
   Widget build(BuildContext context) {
+    
     return Container(
       color: Colors.white,
       padding: const EdgeInsets.all(10),
@@ -92,19 +102,22 @@ class Screen_cart_food extends StatelessWidget {
                           )),
                         ),
                       ),
-                      // ElegantNumberButton(
-                      //   initialValue: 0,
-                      //   buttonSizeHeight: 25,
-                      //   buttonSizeWidth: 30,
-                      //   color: Colors.black,
-                      //   minValue: 1,
-                      //   maxValue: 100,
-                      //   decimalPlaces: 0,
-                      //   onChanged: (Value) {},
-                      //   // textStyle: GoogleFonts.roboto(),
-                      //   textStyle: GoogleFonts.roboto(
-                      //       textStyle: const TextStyle(fontSize: 20)),
-                      // ),
+                      Obx(
+                    () => ElegantNumberButton(
+                      initialValue:
+                          foodDetailStateController.quantity.value,
+                      buttonSizeHeight: 25,
+                      buttonSizeWidth: 25,
+                      textStyle: GoogleFonts.roboto(),
+                      minValue: 1,
+                      maxValue: 99,
+                      color: Colors.amber,
+                      onChanged: (value) {
+                      foodDetailStateController.quantity.value = value.toInt();
+                      },
+                      decimalPlaces: 0,
+                    ),
+                  )
                     ],
                   ),
                 ),
@@ -117,80 +130,7 @@ class Screen_cart_food extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 30, left: 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: MyColors.color4,
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.white,
-                            spreadRadius: 3,
-                            blurRadius: 10,
-                            offset: Offset(0, 3),
-                          )
-                        ]),
-                    child: Image.asset(
-                      'asset/burger.png',
-                      alignment: Alignment.topCenter,
-                      height: 140,
-                      width: 120,
-                    ),
-                  ),
-                ),
-                Container(
-                  alignment: Alignment.topLeft,
-                  padding: const EdgeInsets.only(right: 70),
-                  child: Column(
-                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        'Burger',
-                        style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(fontSize: 25)),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 25),
-                        child: Text(
-                          '25000',
-                          style: GoogleFonts.roboto(
-                              textStyle: TextStyle(
-                            fontSize: 20,
-                            color: MyColors.color3,
-                          )),
-                        ),
-                      ),
-                    //   ElegantNumberButton(
-                    //     initialValue: 0,
-                    //     buttonSizeHeight: 25,
-                    //     buttonSizeWidth: 30,
-                    //     color: Colors.black,
-                    //     minValue: 1,
-                    //     maxValue: 100,
-                    //     decimalPlaces: 0,
-                    //     onChanged: (Value) {},
-                    //     // textStyle: GoogleFonts.roboto(),
-                    //     textStyle: GoogleFonts.roboto(
-                    //         textStyle: TextStyle(fontSize: 20)),
-                    //   ),
-                    // ],
-              ]),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.remove_circle),
-                  iconSize: 40,
-                  color: Colors.red,
-                )
-              ],
-            ),
-          ),
+          
           Padding(
             padding: const EdgeInsets.only(top: 50, left: 5),
             child: Container(
