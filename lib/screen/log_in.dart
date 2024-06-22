@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oderfoodapp_flutter/main.dart';
-import 'package:oderfoodapp_flutter/screen/register_screen.dart'; // Import màn hình đăng ký
+import 'package:oderfoodapp_flutter/screen/register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -117,7 +117,8 @@ class LoginScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.pushReplacement(
                               context,
-                              MaterialPageRoute(builder: (context) => MyHomePage()),
+                              // ignore: prefer_const_constructors
+                              MaterialPageRoute(builder: (context) =>  NavigationMenu()),
                             );
                           },
                           style: ButtonStyle(

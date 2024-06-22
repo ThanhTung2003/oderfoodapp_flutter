@@ -18,6 +18,7 @@ class FoodDetailNameWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.white,
       elevation: 12,
       child: SizedBox(
         width: double.infinity,
@@ -59,7 +60,7 @@ class FoodDetailNameWidget extends StatelessWidget {
                       textStyle: GoogleFonts.roboto(),
                       minValue: 1,
                       maxValue: 99,
-                      color: Colors.grey,
+                      color: Colors.amber,
                       onChanged: (value) {
                       foodDetailStateController.quantity.value = value.toInt();
                       },
@@ -68,7 +69,6 @@ class FoodDetailNameWidget extends StatelessWidget {
                   )
                 ],
               ),
-              
             ],
           ),
         ),
