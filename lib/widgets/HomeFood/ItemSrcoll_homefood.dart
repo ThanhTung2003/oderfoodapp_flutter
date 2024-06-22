@@ -27,17 +27,17 @@ class ItemSrcollHomeFood extends StatelessWidget{
           ElevatedButton(
             onPressed: () {
             },
+          
+              style: ElevatedButton.styleFrom(
+              minimumSize:  const Size(100, 100),
+              padding: EdgeInsets.zero,
+            ),
             child: 
               Image.asset(
               "asset/burger.png",
               height: 60, 
               width: 70, 
               fit: BoxFit.cover,
-            ),
-          
-              style: ElevatedButton.styleFrom(
-              minimumSize:  Size(100, 100),
-              padding: EdgeInsets.zero,
             ), 
           ),
           const Text("Burger"),
@@ -49,17 +49,17 @@ class ItemSrcollHomeFood extends StatelessWidget{
           ElevatedButton(
             onPressed: () {
             },
+          
+              style: ElevatedButton.styleFrom(
+              minimumSize:  const Size(100, 100),
+              padding: EdgeInsets.zero,
+            ),
             child: 
               Image.asset(
               "asset/burger.png",
               height: 60, 
               width: 70, 
               fit: BoxFit.cover,
-            ),
-          
-              style: ElevatedButton.styleFrom(
-              minimumSize:  Size(100, 100),
-              padding: EdgeInsets.zero,
             ), 
           ),
           const Text("Burger"),
@@ -71,17 +71,17 @@ class ItemSrcollHomeFood extends StatelessWidget{
           ElevatedButton(
             onPressed: () {
             },
+          
+              style: ElevatedButton.styleFrom(
+              minimumSize:  const Size(100, 100),
+              padding: EdgeInsets.zero,
+            ),
             child: 
               Image.asset(
               "asset/burger.png",
               height: 60, 
               width: 70, 
               fit: BoxFit.cover,
-            ),
-          
-              style: ElevatedButton.styleFrom(
-              minimumSize:  Size(100, 100),
-              padding: EdgeInsets.zero,
             ), 
           ),
           const Text("Burger"),
@@ -93,17 +93,17 @@ class ItemSrcollHomeFood extends StatelessWidget{
           ElevatedButton(
             onPressed: () {
             },
+          
+              style: ElevatedButton.styleFrom(
+              minimumSize:  const Size(100, 100),
+              padding: EdgeInsets.zero,
+            ),
             child: 
               Image.asset(
               "asset/burger.png",
               height: 60, 
               width: 70, 
               fit: BoxFit.cover,
-            ),
-          
-              style: ElevatedButton.styleFrom(
-              minimumSize:  Size(100, 100),
-              padding: EdgeInsets.zero,
             ), 
           ),
           const Text("Burger"),
@@ -115,17 +115,17 @@ class ItemSrcollHomeFood extends StatelessWidget{
           ElevatedButton(
             onPressed: () {
             },
+          
+              style: ElevatedButton.styleFrom(
+              minimumSize:  const Size(100, 100),
+              padding: EdgeInsets.zero,
+            ),
             child: 
               Image.asset(
               "asset/burger.png",
               height: 60, 
               width: 70, 
               fit: BoxFit.cover,
-            ),
-          
-              style: ElevatedButton.styleFrom(
-              minimumSize:  Size(100, 100),
-              padding: EdgeInsets.zero,
             ), 
           ),
           const Text("Burger"),

@@ -7,7 +7,7 @@ import 'package:oderfoodapp_flutter/widgets/HomeFood/appbar_homefood.dart';
 class MyColors {
   static const Color color1 = Color(0xFF46289C); // Màu #46289C
   static const Color color2 = Color(0xFF7A6AA6);
-  static const Color color = Color(0xF1F1F1); // Màu #7A6AA6
+  static const Color color = Color(0x00f1f1f1); // Màu #7A6AA6
 }
 
 
@@ -62,7 +62,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           appbar_homefood(),
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Align(
               alignment: Alignment.topCenter,
               child: SearchAnchor(

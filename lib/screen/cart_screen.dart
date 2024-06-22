@@ -35,7 +35,7 @@ class ScreenCartFood extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 30),
+                padding: const EdgeInsets.only(top: 30),
                 child: Text(
                   "Giỏ Hàng",
                   style: GoogleFonts.roboto(

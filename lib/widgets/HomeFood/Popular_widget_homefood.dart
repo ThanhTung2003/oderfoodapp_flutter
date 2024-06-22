@@ -9,6 +9,8 @@ class MyColors {
     // static const Color color3 = Color(0x644AB5);//Màu #644AB5
 }
 class Popular_widget_homefood extends StatelessWidget{
+  const Popular_widget_homefood({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -25,18 +27,18 @@ class Popular_widget_homefood extends StatelessWidget{
             width: 150,
             height: 205,
             decoration: BoxDecoration(
-              color: Color(0xFFD9D9D9),
+              color: const Color(0xFFD9D9D9),
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
                   color: Colors.white.withOpacity(0.3),
                   spreadRadius: 3,
                   blurRadius: 10,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ]
             ),
-            child: Padding(padding: EdgeInsets.symmetric(horizontal: 5),
+            child: Padding(padding: const EdgeInsets.symmetric(horizontal: 5),
             
            child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,21 +48,21 @@ class Popular_widget_homefood extends StatelessWidget{
               child: Image.asset('asset/burger.png',height: 115,
               ),
              ),
-             Text("Hamburger",       
+             const Text("Hamburger",       
              style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w900,
               ),
              ),
-             SizedBox(height: 1),
-             Text("Taste our burger",
+             const SizedBox(height: 1),
+             const Text("Taste our burger",
              style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.bold,
               ),
              ),
-             SizedBox(height: 5),
-             Row(
+             const SizedBox(height: 5),
+             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 

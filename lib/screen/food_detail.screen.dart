@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:oderfoodapp_flutter/model/size_model.dart';
 import 'package:oderfoodapp_flutter/state/category_state.dart';
 import 'package:oderfoodapp_flutter/state/food_detail_state.dart';
 import 'package:oderfoodapp_flutter/state/food_list_state.dart';

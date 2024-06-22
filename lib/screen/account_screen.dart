@@ -29,12 +29,12 @@ class _SrceenAccount extends State<SrceenAccount> {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(top: 30),
+              padding: const EdgeInsets.only(top: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Text(
                       'Account',
                       textAlign: TextAlign.left,
@@ -75,7 +75,7 @@ class _SrceenAccount extends State<SrceenAccount> {
                    color: Colors.black.withOpacity(0.1),
                    spreadRadius: 2,
                    blurRadius: 15,
-                   offset: Offset(0, 7), // changes position of shadow
+                   offset: const Offset(0, 7), // changes position of shadow
                   ),
                 ],
               ),
@@ -86,8 +86,8 @@ class _SrceenAccount extends State<SrceenAccount> {
                 frontWidget: _buildFrontWidget1(),
                 innerWidget: _buildInnerWidget1(),
                 cellSize: Size(MediaQuery.of(context).size.width, 140),
-                padding: EdgeInsets.all(15),
-                animationDuration: Duration(milliseconds: 500),
+                padding: const EdgeInsets.all(15),
+                animationDuration: const Duration(milliseconds: 500),
                 borderRadius: 10,
                 onOpen: () => print('cell opened 1'),
                 onClose: () => print('cell closed 1'),
@@ -178,7 +178,7 @@ class _SrceenAccount extends State<SrceenAccount> {
             right: 10,
             bottom: 10,
             child: TextButton(
-              onPressed: () => _foldingCellKey1?.currentState?.toggleFold(),
+              onPressed: () => _foldingCellKey1.currentState?.toggleFold(),
               child: Text(
                 "MỞ 1",
                 style: GoogleFonts.poppins(
@@ -344,7 +344,7 @@ class _SrceenAccount extends State<SrceenAccount> {
             child: Text(
               "",
               style: GoogleFonts.poppins(
-                color: Color(0xFF2e282a),
+                color: const Color(0xFF2e282a),
                 fontSize: 30.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -356,12 +356,12 @@ class _SrceenAccount extends State<SrceenAccount> {
             bottom: 10,
             child: TextButton(
               onPressed: () => _foldingCellKey2?.currentState?.toggleFold(),
-              child: Text(
-                "Đóng 2",
-              ),
               style: TextButton.styleFrom(
                 backgroundColor: Colors.white,
-                minimumSize: Size(80, 40),
+                minimumSize: const Size(80, 40),
+              ),
+              child: const Text(
+                "Đóng 2",
               ),
             ),
           ),
@@ -382,7 +382,7 @@ class _SrceenAccount extends State<SrceenAccount> {
             child: Text(
               "Cài Đặt Giao Diện",
               style: GoogleFonts.roboto(
-                color: Color(0xFF2e282a),
+                color: const Color(0xFF2e282a),
                 fontSize: 35.0,
                 fontWeight: FontWeight.w700,
               ),
@@ -393,6 +393,10 @@ class _SrceenAccount extends State<SrceenAccount> {
             bottom: 10,
             child: TextButton(
               onPressed: () => _foldingCellKey3?.currentState?.toggleFold(),
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.white,
+                minimumSize: const Size(80, 40),
+              ),
               child: Text(
                 "MỞ 3",
                 style: GoogleFonts.poppins(
@@ -400,10 +404,6 @@ class _SrceenAccount extends State<SrceenAccount> {
                   fontWeight : FontWeight.w600,
                   
                 ),
-              ),
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.white,
-                minimumSize: Size(80, 40),
               ),
             ),
           )
@@ -415,69 +415,67 @@ class _SrceenAccount extends State<SrceenAccount> {
   Widget _buildInnerWidget3() {
     return Container(
       
-      color: Color(0xFFecf2f9),
+      color: const Color(0xFFecf2f9),
       alignment: Alignment.topLeft,
-      padding: EdgeInsets.only(top: 5),
+      padding: const EdgeInsets.only(top: 5),
       child: Stack(
         children: [
-          Container(
-            child: Column(
-              children: [
-                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 5,vertical: 1),
-                    alignment: Alignment.topLeft,
-                    child: TextButton(
-                                   onPressed: () {},
-                                child: Text(
-                                  " Sáng&tối",
-                                  textAlign: TextAlign.left,
-                                  style: GoogleFonts.poppins(
-                    color: Color(0xFF2e282a),
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                                  ),
-                                )
-                              ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 5),
-                     alignment: Alignment.topLeft,
-                    child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: 
-                           Icon(Icons.dark_mode,
-                           size: 40,
-                           ),
-                        ),
-                     
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: 
-                           Icon(Icons.sunny,
-                           size: 40,
-                           ),
-                        ),
-                      ],
+          Column(
+            children: [
+                 Container(
+                  padding: EdgeInsets.symmetric(horizontal: 5,vertical: 1),
+                  alignment: Alignment.topLeft,
+                  child: TextButton(
+                                 onPressed: () {},
+                              child: Text(
+                                " Sáng&tối",
+                                textAlign: TextAlign.left,
+                                style: GoogleFonts.poppins(
+                  color: Color(0xFF2e282a),
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                            ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                   alignment: Alignment.topLeft,
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: 
+                         const Icon(Icons.dark_mode,
+                         size: 40,
+                         ),
                       ),
-                  )
-              ]
-          ), 
-          ),
+                   
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: 
+                         const Icon(Icons.sunny,
+                         size: 40,
+                         ),
+                      ),
+                    ],
+                    ),
+                )
+            ]
+                    ),
           // widget_switchmode(),
             Positioned(
             right: 10,
             bottom: 10,
             child: TextButton(
               onPressed: () => _foldingCellKey3?.currentState?.toggleFold(),
-              child: Text(
-                "Đóng 3",
-              ),
               style: TextButton.styleFrom(
                 backgroundColor: Colors.white,
-                minimumSize: Size(80, 40),
+                minimumSize: const Size(80, 40),
+              ),
+              child: const Text(
+                "Đóng 3",
               ),
             ),
           ),
