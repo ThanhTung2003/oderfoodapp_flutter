@@ -2,8 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oderfoodapp_flutter/Theme_UI/darkmode.dart';
+import 'package:oderfoodapp_flutter/screen/cart_screen.dart';
+import 'package:oderfoodapp_flutter/screen/homesrceen.dart';
 import 'package:oderfoodapp_flutter/screen/restaurant_screen.dart';
 import 'package:oderfoodapp_flutter/screen/splash_screen.dart';
+import 'package:oderfoodapp_flutter/state/food_detail_state.dart';
 
 
 Future<void> main() async {
@@ -75,21 +78,24 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [
-    const Card(
-      shadowColor: Colors.transparent,
-      margin: EdgeInsets.all(8.0),
-      child: SizedBox.expand(
-        child: Center(
-          child: Text(
-            'Menu Screen',
-            style: TextStyle(),
-          ),
-        ),
-      ),
-    ),
-    //HomeScreen(),
+    //         'Menu Screen',
+    // const Card(
+    //   shadowColor: Colors.transparent,
+    //   margin: EdgeInsets.all(8.0),
+    //   child: SizedBox.expand(
+    //     child: Center(
+    //       child: Text(
+    //         style: TextStyle(),
+    //       ),
+    //     ),
+    //   ),
+    // ),
+    
+    HomeScreen(),
     RestaurantScreen(),
-    Container(color: Colors.amberAccent),
+
+    ScreenCartFood(foodDetailStateController: FoodDetailStateController(),),
+    
     Container(
       color: Colors.blueAccent,
     )
