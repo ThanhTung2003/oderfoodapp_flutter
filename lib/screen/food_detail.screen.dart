@@ -43,28 +43,30 @@ class FoodListDetailScreen extends StatelessWidget {
               )
             ];
           },
-          body: Container(
-            margin: const EdgeInsets.only(top: 5),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                FoodDetailNameWidget(
-                    foodDetailStateController: foodDetailStateController,
-                    foodListStateController: foodListStateController),
-                FoodDetailDescriptionWidget(
-                    foodListStateController: foodListStateController),
-                // Kiểm tra nếu đồ ăn có size
-                foodListStateController.selectedFood.value.size.isNotEmpty
-                    ? FoodSizeWidget(
-                        foodListStateController: foodListStateController,
-                        foodDetailStateController: foodDetailStateController)
-                    : Container(),
-                // Topping
-                foodListStateController.selectedFood.value.addon.isNotEmpty
-                    ? FoodTopping(foodListStateController: foodListStateController, foodDetailStateController: foodDetailStateController)
-                    : Container(),
-              ],
+          body: SingleChildScrollView(
+            child: Container(
+              margin: const EdgeInsets.only(top: 5),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  FoodDetailNameWidget(
+                      foodDetailStateController: foodDetailStateController,
+                      foodListStateController: foodListStateController),
+                  FoodDetailDescriptionWidget(
+                      foodListStateController: foodListStateController),
+                  // Kiểm tra nếu đồ ăn có size
+                  foodListStateController.selectedFood.value.size.isNotEmpty
+                      ? FoodSizeWidget(
+                          foodListStateController: foodListStateController,
+                          foodDetailStateController: foodDetailStateController)
+                      : Container(),
+                  // Topping
+                  foodListStateController.selectedFood.value.addon.isNotEmpty
+                      ? FoodTopping(foodListStateController: foodListStateController, foodDetailStateController: foodDetailStateController)
+                      : Container(),
+                ],
+              ),
             ),
           ),
         ),
