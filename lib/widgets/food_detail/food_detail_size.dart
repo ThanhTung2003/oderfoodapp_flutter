@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,6 +8,7 @@ import 'package:oderfoodapp_flutter/state/food_detail_state.dart';
 import 'package:oderfoodapp_flutter/state/food_list_state.dart';
 
 class Food_Size_Widget extends StatelessWidget {
+  
   const Food_Size_Widget({
     super.key,
     required this.foodListStateController,
