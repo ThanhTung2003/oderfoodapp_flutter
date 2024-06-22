@@ -15,6 +15,7 @@ class FoodDetailDescriptionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 12,
+      color: Colors.white,
       child: SizedBox(
         width: double.infinity,
         child: Padding(

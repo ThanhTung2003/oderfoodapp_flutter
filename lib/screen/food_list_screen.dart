@@ -37,20 +37,23 @@ class FoodListScreen extends StatelessWidget {
               showItemInterval: const Duration(milliseconds: 300),
               reAnimateOnVisibility: true,
               scrollDirection: Axis.vertical,
-              itemCount:
-                  categoryStateController.selectedCategory.value.foods.length,
-              itemBuilder: animationItemBuilder((index) => 
-               InkWell(
-                    onTap: () {
-                      foodListStateController.selectedFood.value =
-                          categoryStateController
-                              .selectedCategory.value.foods[index];
-                          Get.to(()=>FoodListDetailScreen());
-                    },
-                    child: Hero( tag:categoryStateController.selectedCategory.value.foods[index].name,
+              itemCount: categoryStateController
+                  .selectedCategory.value.foods.length,
+              itemBuilder: animationItemBuilder(
+                (index) => InkWell(
+                  onTap: () {
+                    foodListStateController.selectedFood.value =
+                        categoryStateController
+                            .selectedCategory.value.foods[index];
+                    Get.to(() => FoodListDetailScreen());
+                  },
+                  child: Hero(
+                    tag: categoryStateController
+                        .selectedCategory.value.foods[index].name,
                     child: SizedBox(
                       height: MediaQuery.of(context).size.height / 3,
                       child: Card(
+                        color: Colors.white, //SOS
                         semanticContainer: true,
                         clipBehavior: Clip.antiAliasWithSaveLayer,
                         child: Stack(
@@ -126,11 +129,12 @@ class FoodListScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                    )),
-                  )), )
-              
+                    ),
+                  ),
+                ),
+              ),
             ),
-          
+          ),
         ],
       ),
     );
