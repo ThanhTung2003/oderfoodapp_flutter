@@ -87,6 +87,7 @@ class NavigationController extends GetxController {
         ),
       ),
     ),
+    //HomeScreen(),
     RestaurantScreen(),
     Container(color: Colors.amberAccent),
     Container(

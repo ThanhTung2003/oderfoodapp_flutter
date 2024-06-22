@@ -35,7 +35,7 @@ class MenuWidget extends StatelessWidget {
             ),
             Text(
               menuName,
-              style: GoogleFonts.poppins(
+              style: GoogleFonts.roboto(
                   fontSize: 18,
                   color: Colors.white,
                   fontWeight: FontWeight.w900),

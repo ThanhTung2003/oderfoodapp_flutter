@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oderfoodapp_flutter/model/size_model.dart';
 import 'package:oderfoodapp_flutter/state/category_state.dart';
 import 'package:oderfoodapp_flutter/state/food_detail_state.dart';
 import 'package:oderfoodapp_flutter/state/food_list_state.dart';
 import 'package:oderfoodapp_flutter/widgets/food_detail/food_detail_description.dart';
 import 'package:oderfoodapp_flutter/widgets/food_detail/food_detail_image.dart';
 import 'package:oderfoodapp_flutter/widgets/food_detail/food_detail_name.dart';
+import 'package:oderfoodapp_flutter/widgets/food_detail/food_detail_size.dart';
 
 class FoodListDetailScreen extends StatelessWidget {
   FoodListDetailScreen({super.key});
 
   final CategoryStateController categoryStateController = Get.find();
   final FoodListStateController foodListStateController = Get.find();
-  final FoodDetailStateController foodDetailStateController = Get.put(FoodDetailStateController());
+  final FoodDetailStateController foodDetailStateController =
+      Get.put(FoodDetailStateController());
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +50,14 @@ class FoodListDetailScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 FoodDetailNameWidget(
-                  foodDetailStateController: foodDetailStateController,
+                    foodDetailStateController: foodDetailStateController,
                     foodListStateController: foodListStateController),
-                FoodDetailDescriptionWidget(foodListStateController: foodListStateController)
+                FoodDetailDescriptionWidget(
+                    foodListStateController: foodListStateController),
+                // Kiểm tra nếu đồ ăn có size
+                foodListStateController.selectedFood.value.size.isNotEmpty
+                    ? Food_Size_Widget(foodListStateController: foodListStateController, foodDetailStateController: foodDetailStateController)
+                    : Container()
               ],
             ),
           ),

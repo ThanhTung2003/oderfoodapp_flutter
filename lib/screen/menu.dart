@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:oderfoodapp_flutter/const/const.dart';
 import 'package:oderfoodapp_flutter/strings/restaurant_home_strings.dart';
 import 'package:oderfoodapp_flutter/viewmodel/menu_vm/menu_viewmodel_imp.dart';
 import 'package:oderfoodapp_flutter/widgets/menu/categories_menu_widget.dart';
@@ -15,7 +14,7 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(COLOR_MENU_BACKGROUND),
+      backgroundColor: const Color.fromARGB(255, 156, 164, 91), //const Color(COLOR_MENU_BACKGROUND)
       body: SafeArea(
         child: Column(
           children: [
@@ -28,7 +27,7 @@ class MenuScreen extends StatelessWidget {
                         margin: const EdgeInsets.only(left: 40),
                         child: const CircleAvatar(
                           maxRadius: 40,
-                          backgroundColor: Color(COLOR_ICON_DRAWER),
+                          backgroundColor: Colors.amber,
                           child: Icon(
                             Icons.restaurant,
                             color: Colors.white,
@@ -44,7 +43,8 @@ class MenuScreen extends StatelessWidget {
             // const Divider(
             // thickness: 1,
             // ),
-            HomeMenuWidget(zoomDrawerController: zoomDrawerController), // menu
+            HomeMenuWidget(
+              zoomDrawerController: zoomDrawerController,), // menu
             // const Divider(
             // thickness: 1,
             // ),
