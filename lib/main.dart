@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:oderfoodapp_flutter/Theme_UI/darkmode.dart';
+import 'package:oderfoodapp_flutter/screen/cart_screen.dart';
 import 'package:oderfoodapp_flutter/screen/restaurant_screen.dart';
 import 'package:oderfoodapp_flutter/screen/splash_screen.dart';
 
@@ -88,7 +89,9 @@ class NavigationController extends GetxController {
       ),
     ),
     RestaurantScreen(),
-    Container(color: Colors.amberAccent),
+
+    const Screen_cart_food(),
+
     Container(
       color: Colors.blueAccent,
     )
