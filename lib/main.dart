@@ -91,7 +91,7 @@ class NavigationController extends GetxController {
     //   ),
     // ),
     
-    HomeScreen(),
+    const HomeScreen(),
     RestaurantScreen(),
 
     ScreenCartFood(foodDetailStateController: FoodDetailStateController(),),

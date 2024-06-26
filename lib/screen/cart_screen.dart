@@ -15,17 +15,12 @@ class MyColors {
 }
 
 class ScreenCartFood extends StatelessWidget {
-
- 
-
   final FoodDetailStateController foodDetailStateController;
 
   const ScreenCartFood({super.key, required this.foodDetailStateController});
 
-  
   @override
   Widget build(BuildContext context) {
-    
     return Container(
       color: Colors.white,
       padding: const EdgeInsets.all(10),
@@ -35,7 +30,7 @@ class ScreenCartFood extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 30),
+                padding: const EdgeInsets.only(top: 30),
                 child: Text(
                   "Giỏ Hàng",
                   style: GoogleFonts.roboto(
@@ -46,7 +41,6 @@ class ScreenCartFood extends StatelessWidget {
                   ),
                 ),
               ),
-              
             ],
           ),
           Padding(
@@ -99,21 +93,22 @@ class ScreenCartFood extends StatelessWidget {
                         ),
                       ),
                       Obx(
-                    () => ElegantNumberButton(
-                      initialValue:
-                          foodDetailStateController.quantity.value,
-                      buttonSizeHeight: 25,
-                      buttonSizeWidth: 25,
-                      textStyle: GoogleFonts.roboto(),
-                      minValue: 1,
-                      maxValue: 99,
-                      color: Colors.amber,
-                      onChanged: (value) {
-                      foodDetailStateController.quantity.value = value.toInt();
-                      },
-                      decimalPlaces: 0,
-                    ),
-                  )
+                        () => ElegantNumberButton(
+                          initialValue:
+                              foodDetailStateController.quantity.value,
+                          buttonSizeHeight: 25,
+                          buttonSizeWidth: 25,
+                          textStyle: GoogleFonts.roboto(),
+                          minValue: 1,
+                          maxValue: 99,
+                          color: Colors.amber,
+                          onChanged: (value) {
+                            foodDetailStateController.quantity.value =
+                                value.toInt();
+                          },
+                          decimalPlaces: 0,
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -126,7 +121,7 @@ class ScreenCartFood extends StatelessWidget {
               ],
             ),
           ),
-           Padding(
+          Padding(
             padding: const EdgeInsets.only(top: 30, left: 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -176,21 +171,22 @@ class ScreenCartFood extends StatelessWidget {
                         ),
                       ),
                       Obx(
-                    () => ElegantNumberButton(
-                      initialValue:
-                          foodDetailStateController.quantity.value,
-                      buttonSizeHeight: 25,
-                      buttonSizeWidth: 25,
-                      textStyle: GoogleFonts.roboto(),
-                      minValue: 1,
-                      maxValue: 99,
-                      color: Colors.amber,
-                      onChanged: (value) {
-                      foodDetailStateController.quantity.value = value.toInt();
-                      },
-                      decimalPlaces: 0,
-                    ),
-                  )
+                        () => ElegantNumberButton(
+                          initialValue:
+                              foodDetailStateController.quantity.value,
+                          buttonSizeHeight: 25,
+                          buttonSizeWidth: 25,
+                          textStyle: GoogleFonts.roboto(),
+                          minValue: 1,
+                          maxValue: 99,
+                          color: Colors.amber,
+                          onChanged: (value) {
+                            foodDetailStateController.quantity.value =
+                                value.toInt();
+                          },
+                          decimalPlaces: 0,
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -203,7 +199,6 @@ class ScreenCartFood extends StatelessWidget {
               ],
             ),
           ),
-          
           Padding(
             padding: const EdgeInsets.only(top: 20, left: 5),
             child: Container(
@@ -264,7 +259,7 @@ class ScreenCartFood extends StatelessWidget {
             child: SizedBox(
               child: ElevatedButton(
                 onPressed: () {
-// Navigator.pushReplacement(
+                  // Navigator.pushReplacement(
                   //   context,
                   //   MaterialPageRoute(builder: (context) => MyHomePage()),
                   // );

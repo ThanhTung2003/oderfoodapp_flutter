@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:oderfoodapp_flutter/screen/account_screen.dart';
 
 
+// ignore: camel_case_types
 class appbar_homefood extends StatelessWidget {
+  const appbar_homefood({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -27,7 +30,7 @@ class appbar_homefood extends StatelessWidget {
             ),
           ),
           IconButton(
-            padding: EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(left: 10),
             icon: ClipOval(
               child: Image.asset(
                 'asset/logo.jpg',
@@ -39,7 +42,7 @@ class appbar_homefood extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SrceenAccount()),
+                MaterialPageRoute(builder: (context) => const SrceenAccount()),
               );
             },
           ),

@@ -1,9 +1,5 @@
 
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 
 
 class MyColors {
@@ -15,7 +11,7 @@ class MyColors {
 
 
 class DiscountWidgetHomeFood extends StatelessWidget {
-  const DiscountWidgetHomeFood({Key? key});
+  const DiscountWidgetHomeFood({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +19,7 @@ class DiscountWidgetHomeFood extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
             child: Text(
               'Khuyến Mãi',
@@ -36,11 +32,11 @@ class DiscountWidgetHomeFood extends StatelessWidget {
           ),
           Container(
             width: double.infinity,
-            padding: EdgeInsets.all(15),
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.all(15),
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             alignment: Alignment.topLeft,
             decoration: BoxDecoration(
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 colors: [MyColors.color1, MyColors.color2],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -51,14 +47,14 @@ class DiscountWidgetHomeFood extends StatelessWidget {
                   color: Colors.white.withOpacity(0.5),
                   spreadRadius: 2,
                   blurRadius: 10,
-                  offset: Offset(0, 5),
+                  offset: const Offset(0, 5),
                 ),
               ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Hôm Nay',
                   style: TextStyle(
                     color: Colors.white,
@@ -66,11 +62,11 @@ class DiscountWidgetHomeFood extends StatelessWidget {
                     fontWeight: FontWeight.w900,
                   ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       'Hóa Đơn Trên 50K',
                       style: TextStyle(
                         color: Colors.white,
@@ -78,7 +74,7 @@ class DiscountWidgetHomeFood extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
-                    SizedBox(width: 2),
+                    const SizedBox(width: 2),
                     Image.asset(
                       'asset/burger.png',
                       height: 90,
@@ -86,7 +82,7 @@ class DiscountWidgetHomeFood extends StatelessWidget {
                     ),
                   ],
                 ),
-                Text(
+                const Text(
                   'Tặng ly Pepsi',
                   style: TextStyle(
                     color: Colors.white,
@@ -97,7 +93,7 @@ class DiscountWidgetHomeFood extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
             child: Text(
               'Phổ Biến',
