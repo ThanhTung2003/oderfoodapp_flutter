@@ -46,6 +46,7 @@ class RestaurantInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
+        color: Colors.white,
         padding: const EdgeInsets.all(5.0),
         width: double.infinity,
         child: Column(

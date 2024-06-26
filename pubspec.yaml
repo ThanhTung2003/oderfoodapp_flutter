@@ -45,6 +45,8 @@ dependencies:
   flutter_zoom_drawer: ^3.2.0
   flutter_elegant_number_button: ^0.0.6
   flutter_rating_bar: ^4.0.1
+  badges: ^3.1.2
+  get_storage: any
 
 
   
