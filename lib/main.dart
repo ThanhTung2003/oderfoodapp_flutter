@@ -78,36 +78,10 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [
-<<<<<<< HEAD
-    const Card(
-      shadowColor: Colors.transparent,
-      margin: EdgeInsets.all(8.0),
-      child: SizedBox.expand(
-        child: Center(
-          child: Text(
-            'Menu Screen',
-            style: TextStyle(),
-          ),
-        ),
-      ),
-    ),
-    //HomeScreen(),
-=======
-    // const Card(
-    //   shadowColor: Colors.transparent,
-    //   margin: EdgeInsets.all(8.0),
-    //   child: SizedBox.expand(
-    //     child: Center(
-    //       child: Text(
-    //         'Menu Screen',
-    //         style: TextStyle(),
-    //       ),
-    //     ),
-    //   ),
-    // ),
+
+    
     
     const HomeScreen(),
->>>>>>> origin/Dat_Cart_Screen
     RestaurantScreen(),
 
     ScreenCartFood(foodDetailStateController: FoodDetailStateController(),),

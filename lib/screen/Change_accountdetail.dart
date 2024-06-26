@@ -1,10 +1,12 @@
-// ignore: file_names
+
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // ignore: camel_case_types, must_be_immutable
-class Changedetail_account extends StatelessWidget {
-  Changedetail_account({super.key});
+class changedetail_account extends StatelessWidget {
+  changedetail_account({super.key});
   String userName = "";
   String userEmail = "";
   String userAddress = "";

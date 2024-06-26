@@ -158,10 +158,10 @@ class detail_account extends StatelessWidget {
             child: SizedBox(
               child: ElevatedButton(
                 onPressed: () {
-                   Future.delayed(Duration(seconds: 2), (){
+                   Future.delayed(const Duration(seconds: 2), (){
                      Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) =>  Changedetail_account()
+                    MaterialPageRoute(builder: (context) =>  changedetail_account()
                     ));
                    }
                  

@@ -1,4 +1,6 @@
 // ignore: file_names
+// ignore_for_file: file_names, duplicate_ignore
+
 import 'package:flutter/material.dart';
 
 
@@ -10,8 +12,8 @@ class MyColors {
     // static const Color color3 = Color(0x644AB5);//Màu #644AB5
 }
 // ignore: camel_case_types
-class Popular_widget_homefood extends StatelessWidget{
-  const Popular_widget_homefood({super.key});
+class popular_widget_homefood extends StatelessWidget{
+  const popular_widget_homefood({super.key});
 
   @override
   Widget build(BuildContext context) {
