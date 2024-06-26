@@ -7,6 +7,7 @@ import 'package:oderfoodapp_flutter/const/const.dart';
 import 'package:oderfoodapp_flutter/screen/food_detail.screen.dart';
 import 'package:oderfoodapp_flutter/state/category_state.dart';
 import 'package:oderfoodapp_flutter/state/food_list_state.dart';
+import 'package:oderfoodapp_flutter/widgets/common/appbar_cart_widget.dart';
 import 'package:oderfoodapp_flutter/widgets/common/common_widgets.dart';
 
 class FoodListScreen extends StatelessWidget {
@@ -19,15 +20,8 @@ class FoodListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          categoryStateController.selectedCategory.value.name,
-          style: GoogleFonts.roboto(color: Colors.black),
-        ),
-        elevation: 10,
-        backgroundColor: const Color(0xFFA696D6),
-        foregroundColor: const Color(0xFF644AB5),
-        iconTheme: const IconThemeData(color: Colors.black),
+      appBar: AppBarCartButton(
+        title: categoryStateController.selectedCategory.value.name,
       ),
       body: Column(
         children: [
@@ -37,8 +31,8 @@ class FoodListScreen extends StatelessWidget {
               showItemInterval: const Duration(milliseconds: 300),
               reAnimateOnVisibility: true,
               scrollDirection: Axis.vertical,
-              itemCount: categoryStateController
-                  .selectedCategory.value.foods.length,
+              itemCount:
+                  categoryStateController.selectedCategory.value.foods.length,
               itemBuilder: animationItemBuilder(
                 (index) => InkWell(
                   onTap: () {

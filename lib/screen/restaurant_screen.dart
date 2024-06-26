@@ -67,7 +67,7 @@ class RestaurantScreen extends StatelessWidget{
           end: Offset.zero,
         ).animate(animation),
         child: Container(
-          margin: const EdgeInsets.only(top: 10),
+          margin: const EdgeInsets.only(top: 0),
           child: InkWell(
             onTap: () {
               mainStateController.selectedRestaurant.value = lst[index];
