@@ -39,7 +39,7 @@ class CartStateController extends GetxController {
   }
 
   bool isExists(CartModel cartItem) {
-    return cart.contains(cartItem);
+    return cart.any((e) => e.id == cartItem.id );
   }
 
   sumCart() {
@@ -57,5 +57,7 @@ class CartStateController extends GetxController {
             .map((e) => e.quantity)
             .reduce((value, element) => value + element);
   }
-  getShippingFee() => sumCart()*0.1; // 10% tong
+  getShippingFee() => sumCart()*0.1; // 10% tong bill
+
+  getSubTotal() => sumCart() + getShippingFee();
 }
