@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_elegant_number_button/flutter_elegant_number_button.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/state/cart_state.dart';
 import 'package:oderfoodapp_flutter/strings/cart_string.dart';
+import 'package:oderfoodapp_flutter/viewmodel/cart_vm/cart_view_model_imp.dart';
 import 'package:oderfoodapp_flutter/widgets/cart/cart_image_widget.dart';
+import 'package:oderfoodapp_flutter/widgets/cart/cart_info_widget.dart';
+import 'package:oderfoodapp_flutter/widgets/cart/cart_total_widget.dart';
 
 class CartDetailScreen extends StatelessWidget {
   final box = GetStorage();
   final CartStateController cartStateController =
       Get.put(CartStateController());
+  final CartViewModelImp cartViewModelImp = CartViewModelImp();
 
   CartDetailScreen({super.key});
 
@@ -60,20 +65,23 @@ class CartDetailScreen extends StatelessWidget {
                           margin: const EdgeInsets.symmetric(
                               horizontal: 10.0, vertical: 6.0),
                           child: Container(
+                            //height: 150,
+                            width: double.infinity,
                             color: Colors.white,
                             padding: const EdgeInsets.all(8.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
+                                // CART IMAGE
                                 Expanded(
-                                  flex: 2,
+                                  flex: 4,
                                   child: CartImageWidget(
                                     cartStateController: cartStateController,
                                     cartModel: cartStateController.cart[index],
                                   ),
                                 ),
-                                //cart text food
+                                //cart info
                                 Expanded(
                                     flex: 6,
                                     child: Container(
@@ -84,46 +92,45 @@ class CartDetailScreen extends StatelessWidget {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
                                         children: [
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 8),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment: MainAxisAlignment.start,
-                                              children:[ Text(
-                                                cartStateController
-                                                    .cart[index].name,
-                                                style: GoogleFonts.roboto(
-                                                    fontSize: 18,
-                                                    fontWeight: FontWeight.bold),
-                                                maxLines: 2,
-                                                overflow: TextOverflow.ellipsis,
-                                              ),]
-                                            ),
+                                          // cart food name
+                                          CartTextNameWidget(
+                                            cartStateController:
+                                                cartStateController,
+                                            cartModel:
+                                                cartStateController.cart[index],
                                           ),
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 8),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment: MainAxisAlignment.start,
-                                              children:[ 
-                                                const Icon(Icons.monetization_on,color: Colors.amber,size: 16,),
-                                                const SizedBox(width: 4,),
-                                                Text(
-                                                currencyFormat.format(cartStateController
-                                                    .cart[index].price),
-                                                style: GoogleFonts.roboto(
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.bold),
-                                                maxLines: 2,
-                                                overflow: TextOverflow.ellipsis,
-                                              ),]
-                                            ),
+                                          // cart food price
+                                          CartPriceWidget(
+                                            cartStateController:
+                                                cartStateController,
+                                            cartModel:
+                                                cartStateController.cart[index],
                                           ),
                                         ],
                                       ),
                                     )),
+                                Center(
+                                  child: Obx(
+                                    () => ElegantNumberButton(
+                                      initialValue: cartStateController
+                                          .cart[index].quantity,
+                                      buttonSizeHeight: 25,
+                                      buttonSizeWidth: 25,
+                                      textStyle: GoogleFonts.roboto(fontSize:16),
+                                      minValue: 1,
+                                      maxValue: 99,
+                                      color: Colors.amber,
+                                      onChanged: (value) {
+                                        // update quantity
+                                        cartViewModelImp.updateCart(
+                                            cartStateController,
+                                            index,
+                                            value.toInt());
+                                      },
+                                      decimalPlaces: 0,
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -131,9 +138,24 @@ class CartDetailScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  // Cart Total Widget
+                  TotalWidget(
+                    cartStateController: cartStateController,
+                    text: '',
+                    value: '',
+                    isSubTotal: false,
+                  ),
                 ],
               ))
-          : const Center(child: Text(cartEmptyText)),
+          : Center(
+              child: Text(
+                cartEmptyText,
+                style: GoogleFonts.roboto(
+                    fontSize: 20, fontWeight: FontWeight.bold),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
     );
   }
 }
