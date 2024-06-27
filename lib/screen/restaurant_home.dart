@@ -23,9 +23,9 @@ class RestaurantHomeDetail extends StatelessWidget {
           title: Text(
             mainStateController.selectedRestaurant.value.name,
             style: GoogleFonts.roboto( 
-                color: Colors.black, fontWeight: FontWeight.w900),
+                color: Colors.black, fontWeight: FontWeight.w700),
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.amber,
           foregroundColor: Colors.black,
           elevation: 10,
           iconTheme: const IconThemeData(color: Colors.black),

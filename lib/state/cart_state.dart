@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:oderfoodapp_flutter/model/cart_model.dart';
@@ -51,7 +50,7 @@ class CartStateController extends GetxController {
             .reduce((value, element) => value + element);
   }
 
-  getQuantity() {
+  int getQuantity() {
     return cart.isEmpty
         ? 0
         : cart

@@ -1,17 +1,18 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:oderfoodapp_flutter/Theme_UI/darkmode.dart';
-import 'package:oderfoodapp_flutter/screen/cart_screen.dart';
+import 'package:oderfoodapp_flutter/screen/cart_detail_screen.dart';
 import 'package:oderfoodapp_flutter/screen/homesrceen.dart';
 import 'package:oderfoodapp_flutter/screen/restaurant_screen.dart';
 import 'package:oderfoodapp_flutter/screen/splash_screen.dart';
-import 'package:oderfoodapp_flutter/state/food_detail_state.dart';
 
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const SplashScreen(),
-        '/home': (context) => RestaurantScreen(),
+        '/home': (context) => const RestaurantScreen(),
       },
     );
   }
@@ -73,19 +74,12 @@ class NavigationMenu extends StatelessWidget {
     );
   }
 }
-
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
-
   final screens = [
-
-    
-    
     const HomeScreen(),
-    RestaurantScreen(),
-
-    ScreenCartFood(foodDetailStateController: FoodDetailStateController(),),
-    
+    const RestaurantScreen(),
+    CartDetailScreen(),
     Container(
       color: Colors.blueAccent,
     )

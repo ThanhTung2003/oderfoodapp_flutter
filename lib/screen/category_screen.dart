@@ -5,7 +5,7 @@ import 'package:oderfoodapp_flutter/state/category_state.dart';
 import 'package:oderfoodapp_flutter/state/main_state.dart';
 import 'package:oderfoodapp_flutter/strings/restaurant_home_strings.dart';
 import 'package:oderfoodapp_flutter/viewmodel/category_vm/category_viewmodel_imp.dart';
-import 'package:oderfoodapp_flutter/widgets/category/cateory_list_widget.dart';
+import 'package:oderfoodapp_flutter/widgets/category/category_list_widget.dart';
 import 'package:oderfoodapp_flutter/widgets/common/appbar_cart_widget.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -18,7 +18,7 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarCartButton(title: categoryText),
+      appBar: AppBarCartButton(title: categoryText),
       body: FutureBuilder(
         future: viewmodel.displayCategoryByRestaurantId(
             mainStateController.selectedRestaurant.value.restaurantId),

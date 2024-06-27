@@ -1,20 +1,59 @@
+// ignore_for_file: library_private_types_in_public_api
+
+import 'dart:convert';
+
 import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oderfoodapp_flutter/model/cart_model.dart';
 import 'package:oderfoodapp_flutter/model/restaurant_model.dart';
 import 'package:oderfoodapp_flutter/screen/restaurant_home_detail.dart';
+import 'package:oderfoodapp_flutter/state/cart_state.dart';
 import 'package:oderfoodapp_flutter/state/main_state.dart';
+import 'package:oderfoodapp_flutter/strings/cart_string.dart';
 import 'package:oderfoodapp_flutter/strings/main_strings.dart';
 import 'package:oderfoodapp_flutter/viewmodel/main_view_model_imp.dart';
 import 'package:oderfoodapp_flutter/widgets/main/main_widget.dart';
 
-class RestaurantScreen extends StatelessWidget{
+class RestaurantScreen extends StatefulWidget {
+  
+  const RestaurantScreen({super.key});
+
+  @override
+  RestaurantScreenState createState() => RestaurantScreenState();
+}
+
+class RestaurantScreenState extends State<RestaurantScreen> {
+
   final viewModel = MainViewModelImp();
   final mainStateController = Get.put(MainStateController());
+  final cartStateController = Get.put(CartStateController());
+  final box = GetStorage();
+// ham init cart
+@override
+  void initState() {
+    super.initState();
+    
+    WidgetsBinding.instance.addPostFrameCallback((_)async {
+      if(box.hasData(successtitle)){
+        var cartSave = await box.read(successMessage)as String;
+        if(cartSave.isNotEmpty && cartSave.isNotEmpty)
+        {
+          final listCart = jsonDecode(cartSave) as List<dynamic>;
+          final listCartParsed = listCart.map((e) => CartModel.fromJson(e)).toList();
+          if (listCartParsed.isNotEmpty) {
+            cartStateController.cart.value = listCartParsed;
+          }
+        }
+      }
+      else {
+        cartStateController.cart.value = List<CartModel>.empty(growable: true);
+      }
+     });
+  }
 
-  RestaurantScreen({super.key});
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +66,7 @@ class RestaurantScreen extends StatelessWidget{
             color: Colors.black,
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: Colors.amber,
         elevation: 10,
       ),
       body: FutureBuilder(
@@ -46,7 +85,6 @@ class RestaurantScreen extends StatelessWidget{
                 showItemInterval: Duration(milliseconds: 150),
                 showItemDuration: Duration(milliseconds: 350),
                 reAnimateOnVisibility: true,
-                
               ),
               itemCount: lst.length,
               itemBuilder: (context, index, animation) =>
@@ -57,7 +95,8 @@ class RestaurantScreen extends StatelessWidget{
       ),
     );
   }
-   Widget buildAnimatedItem(BuildContext context, int index,
+
+  Widget buildAnimatedItem(BuildContext context, int index,
       Animation<double> animation, List<RestaurantModel> lst) {
     return FadeTransition(
       opacity: animation,
@@ -71,7 +110,7 @@ class RestaurantScreen extends StatelessWidget{
           child: InkWell(
             onTap: () {
               mainStateController.selectedRestaurant.value = lst[index];
-              Get.to(()=>RestaurantHome());
+              Get.to(() => RestaurantHome());
             },
             child: Container(
               width: double.infinity,
@@ -81,10 +120,10 @@ class RestaurantScreen extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   RestaurantImageWidget(
-                      imageUrl: lst[index].imageUrl), //tách thành widget
+                      imageUrl: lst[index].imageUrl), // tách thành widget
                   RestaurantInfoCard(
-                    name:lst[index].name,
-                    address:lst[index].address) // tach thanh widget
+                      name: lst[index].name,
+                      address: lst[index].address) // tách thành widget
                 ],
               ),
             ),

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/const/const.dart';
 import 'package:oderfoodapp_flutter/screen/food_detail.screen.dart';
+import 'package:oderfoodapp_flutter/state/cart_state.dart';
 import 'package:oderfoodapp_flutter/state/category_state.dart';
 import 'package:oderfoodapp_flutter/state/food_list_state.dart';
 import 'package:oderfoodapp_flutter/widgets/common/appbar_cart_widget.dart';
@@ -16,6 +17,7 @@ class FoodListScreen extends StatelessWidget {
   final FoodListStateController foodListStateController =
       Get.put(FoodListStateController());
   final CategoryStateController categoryStateController = Get.find();
+  final CartStateController cartStateController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +109,12 @@ class FoodListScreen extends StatelessWidget {
                                             width: 50,
                                           ),
                                           IconButton(
-                                              onPressed: () {},
+                                              onPressed: () =>
+                                                  cartStateController.addToCart(
+                                                      categoryStateController
+                                                          .selectedCategory
+                                                          .value
+                                                          .foods[index]),
                                               icon: const Icon(
                                                 Icons
                                                     .add_shopping_cart_outlined,
