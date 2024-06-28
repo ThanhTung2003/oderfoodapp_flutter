@@ -1,1 +1,1 @@
-const restaurantText = 'Nhà hàng gần đây';
+const restaurantText = 'Nearby Restaurants';

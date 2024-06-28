@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:oderfoodapp_flutter/model/cart_model.dart';
@@ -40,16 +39,15 @@ class CartStateController extends GetxController {
   }
 
   bool isExists(CartModel cartItem) {
-    return cart.contains(cartItem);
+    return cart.any((e) => e.id == cartItem.id );
   }
 
-  sumCart() {
-    return cart.isEmpty
+  sumCart() => cart.isEmpty
         ? 0
         : cart
             .map((e) => e.price * e.quantity)
             .reduce((value, element) => value + element);
-  }
+  
 
   getQuantity() {
     return cart.isEmpty
@@ -58,5 +56,7 @@ class CartStateController extends GetxController {
             .map((e) => e.quantity)
             .reduce((value, element) => value + element);
   }
-  getShippingFee() => sumCart()*0.1; // 10% tong
+  getShippingFee() => sumCart()*0.1; // 10% tong bill
+
+  getSubTotal() => sumCart() + getShippingFee();
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folding_cell/folding_cell/widget.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:oderfoodapp_flutter/screen/accountdetail.dart';
+import 'package:oderfoodapp_flutter/screen/account_detail.dart';
 import 'package:oderfoodapp_flutter/screen/log_in.dart';
 
 class MyColors {

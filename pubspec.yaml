@@ -48,6 +48,8 @@ dependencies:
   badges: ^3.1.2
   get_storage: any
   folding_cell: ^1.0.2
+  intl: any
+  flutter_slidable: any
 
 
   
