@@ -42,15 +42,14 @@ class CartStateController extends GetxController {
     return cart.any((e) => e.id == cartItem.id );
   }
 
-  sumCart() {
-    return cart.isEmpty
+  sumCart() => cart.isEmpty
         ? 0
         : cart
             .map((e) => e.price * e.quantity)
             .reduce((value, element) => value + element);
-  }
+  
 
-  int getQuantity() {
+  getQuantity() {
     return cart.isEmpty
         ? 0
         : cart
