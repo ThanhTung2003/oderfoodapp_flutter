@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_elegant_number_button/flutter_elegant_number_button.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oderfoodapp_flutter/screen/payment_screen.dart';
 import 'package:oderfoodapp_flutter/state/food_detail_state.dart';
 
 class MyColors {
@@ -259,10 +260,10 @@ class ScreenCartFood extends StatelessWidget {
             child: SizedBox(
               child: ElevatedButton(
                 onPressed: () {
-                  // Navigator.pushReplacement(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => MyHomePage()),
-                  // );
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const payment_food()),
+                  );
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.white),
@@ -273,7 +274,7 @@ class ScreenCartFood extends StatelessWidget {
                   side: MaterialStateProperty.all(
                       const BorderSide(color: Colors.black, width: 1.0)),
                 ),
-                child: Text('Thanh Toán',
+                child: Text('Tiếp Tục',
                     style: GoogleFonts.roboto(
                       textStyle: const TextStyle(
                         fontWeight: FontWeight.w900,
