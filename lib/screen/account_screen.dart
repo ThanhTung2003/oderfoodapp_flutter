@@ -272,7 +272,7 @@ class _SrceenAccount extends State<SrceenAccount> {
             right: 10,
             bottom: 10,
               child: TextButton(
-                onPressed: () => _foldingCellKey1?.currentState?.toggleFold(),
+                onPressed: () => _foldingCellKey1.currentState?.toggleFold(),
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.white,
                   minimumSize: const Size(80, 40),

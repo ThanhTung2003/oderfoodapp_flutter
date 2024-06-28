@@ -45,12 +45,9 @@ dependencies:
   flutter_zoom_drawer: ^3.2.0
   flutter_elegant_number_button: ^0.0.6
   flutter_rating_bar: ^4.0.1
-<<<<<<< HEAD
   badges: ^3.1.2
   get_storage: any
-=======
   folding_cell: ^1.0.2
->>>>>>> origin/Dat_Cart_Screen
 
 
   
@@ -85,6 +82,15 @@ flutter:
   assets:
    - asset/logo.jpg
    - asset/burger.png
+   - asset/MoMo_Logo.png
+   - asset/Logo-ZaloPay-Square.webp
+   - asset/money.png
+   - asset/banking.png
+   - asset/agribank.png
+   - asset/Sacombank.png
+   - asset/Vietcombank.png
+  
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
