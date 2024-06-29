@@ -19,29 +19,26 @@ class TotalWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Colors.amberAccent,
-      elevation: 12,
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
+    return Container(
+      margin: const EdgeInsets.all(16),
+      color: Colors.white,
+      child: Column(
+        children: [
+          TotalItemWidget(
+            text: totalText, 
+            isSubTotal: false, 
+            value: currencyFormat.format(cartStateController.sumCart())),
+            //const Divider(thickness: 0,color: Colors.black,),
             TotalItemWidget(
-              text: totalText, 
-              isSubTotal: false, 
-              value: currencyFormat.format(cartStateController.sumCart())),
-              const Divider(thickness: 0,color: Colors.black,),
-              TotalItemWidget(
-              text: shippingFeeText, 
-              isSubTotal: false, 
-              value: currencyFormat.format(cartStateController.getShippingFee())),
-              const Divider(thickness: 0,color: Colors.black,),
-              TotalItemWidget(
-              text: subTotalText, 
-              isSubTotal: true, 
-              value: currencyFormat.format(cartStateController.getSubTotal())),
-          ],
-        ),
+            text: shippingFeeText, 
+            isSubTotal: false, 
+            value: currencyFormat.format(cartStateController.getShippingFee())),
+            const Divider(thickness: 2,color: Colors.grey ,),
+            TotalItemWidget(
+            text: subTotalText, 
+            isSubTotal: true, 
+            value: currencyFormat.format(cartStateController.getSubTotal())),
+        ],
       ),
     );
   }

@@ -59,4 +59,5 @@ class CartStateController extends GetxController {
   getShippingFee() => sumCart()*0.1; // 10% tong bill
 
   getSubTotal() => sumCart() + getShippingFee();
+  
 }

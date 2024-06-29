@@ -29,13 +29,12 @@ class _payment_food extends State<payment_food> {
       appBar: AppBar(
         title: Text(
           'Payment Method',
-          style: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 30,fontWeight: FontWeight.w800)),
+          style: GoogleFonts.roboto(textStyle: const TextStyle(fontSize: 30,fontWeight: FontWeight.w800)),
         ),
         leading: const BackButton(),
         backgroundColor: Colors.amber,
         foregroundColor: Colors.black,
         elevation: 0,
-        leadingWidth: 5,
       ),
       body: SafeArea(
         child: Padding(
