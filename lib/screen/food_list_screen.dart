@@ -28,7 +28,8 @@ class FoodListScreen extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: LiveList(
+            child: 
+            LiveList(
               showItemDuration: const Duration(milliseconds: 300),
               showItemInterval: const Duration(milliseconds: 300),
               reAnimateOnVisibility: true,

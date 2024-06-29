@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/model/popular_item_model.dart';
 import 'package:oderfoodapp_flutter/state/main_state.dart';
@@ -25,7 +26,13 @@ class BestDealsWidget extends StatelessWidget {
             mainStateController.selectedRestaurant.value.restaurantId),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(child: SpinKitWave( 
+              color: Colors.amberAccent, 
+              size: 50.0,
+              // waveColor: Colors.orangeAccent,
+              // trackColor: Color.fromARGB(255, 245, 231, 191),
+              duration: Duration(milliseconds: 2000),
+            ));
           } else {
             var lstBestDeals = snapshot.data as List<PopularItemModel>;
             return CarouselSlider(

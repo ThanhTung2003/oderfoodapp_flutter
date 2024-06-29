@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,7 +19,6 @@ import 'package:oderfoodapp_flutter/viewmodel/main_view_model_imp.dart';
 import 'package:oderfoodapp_flutter/widgets/main/main_widget.dart';
 
 class RestaurantScreen extends StatefulWidget {
-  
   const RestaurantScreen({super.key});
 
   @override
@@ -26,32 +26,30 @@ class RestaurantScreen extends StatefulWidget {
 }
 
 class RestaurantScreenState extends State<RestaurantScreen> {
-
   final viewModel = MainViewModelImp();
   final mainStateController = Get.put(MainStateController());
   final cartStateController = Get.put(CartStateController());
   final box = GetStorage();
 // ham init cart
-@override
+  @override
   void initState() {
     super.initState();
-    
-    WidgetsBinding.instance.addPostFrameCallback((_)async {
-      if(box.hasData(successtitle)){
-        var cartSave = await box.read(successMessage)as String;
-        if(cartSave.isNotEmpty && cartSave.isNotEmpty)
-        {
+
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      if (box.hasData(successtitle)) {
+        var cartSave = await box.read(successMessage) as String;
+        if (cartSave.isNotEmpty && cartSave.isNotEmpty) {
           final listCart = jsonDecode(cartSave) as List<dynamic>;
-          final listCartParsed = listCart.map((e) => CartModel.fromJson(e)).toList();
+          final listCartParsed =
+              listCart.map((e) => CartModel.fromJson(e)).toList();
           if (listCartParsed.isNotEmpty) {
             cartStateController.cart.value = listCartParsed;
           }
         }
-      }
-      else {
+      } else {
         cartStateController.cart.value = List<CartModel>.empty(growable: true);
       }
-     });
+    });
   }
 
   @override
@@ -73,7 +71,14 @@ class RestaurantScreenState extends State<RestaurantScreen> {
         future: viewModel.displayRestaurantList(),
         builder: (context, AsyncSnapshot<List<RestaurantModel>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(
+                child: SpinKitWaveSpinner( 
+              color: Colors.amberAccent, 
+              size: 100.0,
+              waveColor: Colors.orangeAccent,
+              trackColor: Color.fromARGB(255, 245, 231, 191),
+              duration: Duration(milliseconds: 2000),
+            ));
           } else if (snapshot.hasError) {
             return Center(child: Text('Lỗi: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
