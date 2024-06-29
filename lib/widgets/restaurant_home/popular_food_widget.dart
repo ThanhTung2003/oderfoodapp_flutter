@@ -1,5 +1,6 @@
 import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/model/popular_item_model.dart';
 import 'package:oderfoodapp_flutter/state/main_state.dart';
@@ -27,8 +28,13 @@ class PopularFoodWidget extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
-              child: CircularProgressIndicator(),
-            );
+              child: SpinKitWave( 
+              color: Colors.amberAccent, 
+              size: 50.0,
+              // waveColor: Colors.orangeAccent,
+              // trackColor: Color.fromARGB(255, 245, 231, 191),
+              duration: Duration(milliseconds: 2000),
+            ));
           } else {
             var lstPopular = snapshot.data as List<PopularItemModel>;
             return Column(

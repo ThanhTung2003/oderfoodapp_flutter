@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:oderfoodapp_flutter/model/category_model.dart';
 import 'package:oderfoodapp_flutter/state/category_state.dart';
@@ -24,7 +25,13 @@ class CategoryScreen extends StatelessWidget {
             mainStateController.selectedRestaurant.value.restaurantId),
         builder: (context, AsyncSnapshot<List<CategoryModel>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(child: SpinKitWaveSpinner( 
+              color: Colors.amberAccent, 
+              size: 100.0,
+              waveColor: Colors.orangeAccent,
+              trackColor: Color.fromARGB(255, 245, 231, 191),
+              duration: Duration(milliseconds: 2000),
+            ));
           } else if (snapshot.hasError) {
             return Center(child: Text('Lỗi: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {

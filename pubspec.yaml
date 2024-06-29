@@ -50,6 +50,7 @@ dependencies:
   folding_cell: ^1.0.2
   intl: any
   flutter_slidable: any
+  flutter_spinkit: any
 
 
   

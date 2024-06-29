@@ -4,6 +4,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oderfoodapp_flutter/screen/payment_screen.dart';
 import 'package:oderfoodapp_flutter/state/cart_state.dart';
 import 'package:oderfoodapp_flutter/strings/cart_string.dart';
 import 'package:oderfoodapp_flutter/viewmodel/cart_vm/cart_view_model_imp.dart';
@@ -24,7 +25,7 @@ class CartDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Your Cart',
+          cartTitleName,
           style: GoogleFonts.roboto(
             fontWeight: FontWeight.w700,
             color: Colors.black,
@@ -116,7 +117,8 @@ class CartDetailScreen extends StatelessWidget {
                                           .cart[index].quantity,
                                       buttonSizeHeight: 25,
                                       buttonSizeWidth: 25,
-                                      textStyle: GoogleFonts.roboto(fontSize:16),
+                                      textStyle:
+                                          GoogleFonts.roboto(fontSize: 16),
                                       minValue: 1,
                                       maxValue: 99,
                                       color: Colors.amber,
@@ -145,6 +147,39 @@ class CartDetailScreen extends StatelessWidget {
                     value: '',
                     isSubTotal: false,
                   ),
+                  //button thanh toan
+                  Padding(
+                      padding: const EdgeInsets.only(top: 15),
+                      child: SizedBox(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const payment_food()),
+                            );
+                          },
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.amberAccent),
+                            padding: MaterialStateProperty.all(
+                                const EdgeInsets.symmetric(
+                                    vertical: 20.0, horizontal: 100.0)),
+                            textStyle: MaterialStateProperty.all(
+                                const TextStyle(fontSize: 20)),
+                            side: MaterialStateProperty.all(const BorderSide(
+                                color: Colors.black, width: 1.0)),
+                          ),
+                          child: Text('Check Out',
+                              style: GoogleFonts.roboto(
+                                textStyle: const TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 25,
+                                  color: Colors.black,
+                                ),
+                              )),
+                        ),
+                      )),
                 ],
               ))
           : Center(

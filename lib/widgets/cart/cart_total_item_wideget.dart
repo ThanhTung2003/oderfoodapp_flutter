@@ -15,24 +15,27 @@ class TotalItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          text,
-          style: GoogleFonts.roboto(
-              fontWeight: FontWeight.bold,
-              fontSize: isSubTotal ? 20 : 16,
-              color: isSubTotal ? Colors.red : Colors.black),
-        ),
-        Text(
-          value,
-          style: GoogleFonts.roboto(
-              fontWeight: FontWeight.w600,
-              fontSize: isSubTotal ? 20 : 16,
-              color: isSubTotal ? Colors.red : Colors.black),
-        ),
-      ],
+    return Container(
+      color: Colors.transparent,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            text,
+            style: GoogleFonts.roboto(
+                fontWeight: FontWeight.bold,
+                fontSize: isSubTotal ? 24 : 20,
+                color: isSubTotal ? Colors.red : Colors.grey),
+          ),
+          Text(
+            value,
+            style: GoogleFonts.roboto(
+                fontWeight: FontWeight.w500,
+                fontSize: isSubTotal ? 24 : 20,
+                color: isSubTotal ? Colors.red : Colors.black),
+          ),
+        ],
+      ),
     );
   }
 }
