@@ -25,7 +25,7 @@ class CartDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Your Cart',
+          cartTitleName,
           style: GoogleFonts.roboto(
             fontWeight: FontWeight.w700,
             color: Colors.black,
@@ -149,27 +149,37 @@ class CartDetailScreen extends StatelessWidget {
                   ),
                   //button thanh toan
                   Padding(
-                    padding: const EdgeInsets.only(top: 15),
-                    child: SizedBox(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const payment_food()),
-                          );
-                        },
-                        child: Text('Tiếp Tục',
-                            style: GoogleFonts.roboto(
-                              textStyle: const TextStyle(
-                                fontWeight: FontWeight.w900,
-                                fontSize: 25,
-                                color: Colors.black,
-                              ),
-                            )),
-                      ),
-                    ),
-                  ),
+                      padding: const EdgeInsets.only(top: 15),
+                      child: SizedBox(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const payment_food()),
+                            );
+                          },
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.amberAccent),
+                            padding: MaterialStateProperty.all(
+                                const EdgeInsets.symmetric(
+                                    vertical: 20.0, horizontal: 100.0)),
+                            textStyle: MaterialStateProperty.all(
+                                const TextStyle(fontSize: 20)),
+                            side: MaterialStateProperty.all(const BorderSide(
+                                color: Colors.black, width: 1.0)),
+                          ),
+                          child: Text('Check Out',
+                              style: GoogleFonts.roboto(
+                                textStyle: const TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 25,
+                                  color: Colors.black,
+                                ),
+                              )),
+                        ),
+                      )),
                 ],
               ))
           : Center(
