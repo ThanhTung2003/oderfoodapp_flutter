@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:oderfoodapp_flutter/strings/restaurant_home_strings.dart';
 import 'package:oderfoodapp_flutter/viewmodel/menu_vm/menu_viewmodel_imp.dart';
-import 'package:oderfoodapp_flutter/widgets/menu/categories_menu_widget.dart';
+import 'package:oderfoodapp_flutter/widgets/menu/menu_widget.dart';
 import 'package:oderfoodapp_flutter/widgets/menu/home_menu_widget.dart';
+import 'package:oderfoodapp_flutter/widgets/menu/menu_widget_callback.dart';
 
 class MenuScreen extends StatelessWidget {
   final ZoomDrawerController zoomDrawerController;
@@ -45,6 +46,9 @@ class MenuScreen extends StatelessWidget {
             HomeMenuWidget(
               zoomDrawerController: zoomDrawerController,
             ), // menu
+            Container(
+              height: 4,
+            ),
 
             MenuWidget(
               icon: Icons.restaurant_rounded,
@@ -52,11 +56,25 @@ class MenuScreen extends StatelessWidget {
               callback: viewmodel.backtoRestaurantList,
               zoomDrawerController: zoomDrawerController,
             ),
+            Container(
+              height: 4,
+            ),
 
             MenuWidget(
               icon: Icons.list,
               menuName: categoryText,
               callback: viewmodel.navigateCategories,
+              zoomDrawerController: zoomDrawerController,
+            ),
+            Container(
+              height: 4,
+            ),
+
+            const Spacer(),
+            MenuWidgetCallback(
+              icon: Icons.login,
+              menuName: loginText,
+              callback: viewmodel.processLoginState,
               zoomDrawerController: zoomDrawerController,
             ),
           ],

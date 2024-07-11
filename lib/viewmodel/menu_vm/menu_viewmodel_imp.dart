@@ -1,3 +1,4 @@
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:oderfoodapp_flutter/screen/category_screen.dart';
 import 'package:oderfoodapp_flutter/screen/homesrceen.dart';
@@ -18,5 +19,10 @@ class MenuViewModelImp implements MenuViewModel {
   void navigateHomeScreen() {
     // ignore: prefer_const_constructors
     Get.to(() => HomeScreen());
+  }
+
+  @override
+  void processLoginState(BuildContext context) {
+    print('abc');
   }
 }

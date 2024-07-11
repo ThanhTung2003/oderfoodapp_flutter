@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:oderfoodapp_flutter/screen/homesrceen.dart';
-import 'package:oderfoodapp_flutter/strings/restaurant_home_strings.dart';
 
-class HomeMenuWidget extends StatelessWidget {
-  const HomeMenuWidget({
+class MenuWidgetCallback extends StatelessWidget {
+  final String menuName;
+  final Function(BuildContext context) callback;
+  final IconData icon;
+
+  const MenuWidgetCallback({
+    required this.menuName,
+    required this.callback,
+    required this.icon,
     super.key,
     required this.zoomDrawerController,
   });
@@ -15,28 +20,21 @@ class HomeMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        zoomDrawerController.toggle!();
-        Navigator.push(
-          context,
-          // ignore: prefer_const_constructors
-          MaterialPageRoute(builder: (context) => HomeScreen()),
-        );
-      },
+      onTap: () => callback(context),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const Icon(
-              Icons.home,
+            Icon(
+              icon,
               color: Colors.white,
             ),
             const SizedBox(
               width: 30,
             ),
             Text(
-              homeText,
+              menuName,
               style: GoogleFonts.roboto(
                   fontSize: 18,
                   color: Colors.white,
