@@ -9,6 +9,9 @@ class CartStateController extends GetxController {
   var cart = List<CartModel>.empty(growable: true).obs;
   final box = GetStorage();
 
+  getCart(String restaurantId) =>
+      cart.where((item) => item.restaurantId == restaurantId);
+
   addToCart(FoodModel foodModel, {int quantity = 1}) async {
     try {
       var cartItem = CartModel(
@@ -19,7 +22,8 @@ class CartStateController extends GetxController {
           size: foodModel.size,
           addon: foodModel.addon,
           description: foodModel.description,
-          quantity: quantity);
+          quantity: quantity,
+          restaurantId: '');
       if (isExists(cartItem)) {
         //nếu đơn hàng có sẵn trong giỏ thì cập nhật số lượng
         var foodNeedToUpdate =
@@ -39,15 +43,14 @@ class CartStateController extends GetxController {
   }
 
   bool isExists(CartModel cartItem) {
-    return cart.any((e) => e.id == cartItem.id );
+    return cart.any((e) => e.id == cartItem.id);
   }
 
   sumCart() => cart.isEmpty
-        ? 0
-        : cart
-            .map((e) => e.price * e.quantity)
-            .reduce((value, element) => value + element);
-  
+      ? 0
+      : cart
+          .map((e) => e.price * e.quantity)
+          .reduce((value, element) => value + element);
 
   getQuantity() {
     return cart.isEmpty
@@ -56,8 +59,15 @@ class CartStateController extends GetxController {
             .map((e) => e.quantity)
             .reduce((value, element) => value + element);
   }
-  getShippingFee() => sumCart()*0.1; // 10% tong bill
+
+  getShippingFee() => sumCart() * 0.1; // 10% tong bill
 
   getSubTotal() => sumCart() + getShippingFee();
-  
+
+  clearCart() {
+    cart.clear();
+    saveDatabase();
+  }
+
+  saveDatabase() => box.write('delete', jsonEncode(cart));
 }

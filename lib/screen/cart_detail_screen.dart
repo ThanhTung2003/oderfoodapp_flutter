@@ -32,12 +32,15 @@ class CartDetailScreen extends StatelessWidget {
           ),
         ),
         backgroundColor: Colors.amber,
-        actions: [
-          cartStateController.getQuantity() >
-                  0 // kiểm tra nếu giỏ hàng rỗng thì không có nút clear
-              ? IconButton(onPressed: () {}, icon: const Icon(Icons.clear))
-              : Container()
-        ],
+        // actions: [
+        //   cartStateController.getQuantity() >
+        //           0 // kiểm tra nếu giỏ hàng rỗng thì không có nút clear
+        //       ? IconButton(
+        //           onPressed: () =>
+        //               cartViewModelImp.clearCart(cartStateController),
+        //           icon: const Icon(Icons.clear))
+        //       : Container()
+        // ],
       ),
       body: cartStateController.getQuantity() > 0
           ? Obx(() => Column(
@@ -50,9 +53,18 @@ class CartDetailScreen extends StatelessWidget {
                           motion: const ScrollMotion(),
                           children: [
                             SlidableAction(
-                              onPressed: (context) {
-                                // Xử lý sự kiện xóa item ở đây
-                                cartStateController.cart.removeAt(index);
+                              onPressed: (conext) {
+                                Get.defaultDialog(
+                                  title: deleteConfirmTitle,
+                                  content: const Text(deleteConfirmContent),
+                                  textCancel: cancelText,
+                                  textConfirm: confirmText,
+                                  backgroundColor: Colors.amberAccent,
+                                  buttonColor: Colors.redAccent,
+                                  confirmTextColor: Colors.black,
+                                  onConfirm: () => cartViewModelImp.deleteCart(
+                                      cartStateController, index),
+                                );
                               },
                               backgroundColor: Colors.red,
                               foregroundColor: Colors.white,
