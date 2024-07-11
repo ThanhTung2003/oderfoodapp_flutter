@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oderfoodapp_flutter/screen/homesrceen.dart';
 import 'package:oderfoodapp_flutter/strings/restaurant_home_strings.dart';
+// Import HomeScreen
 
 class HomeMenuWidget extends StatelessWidget {
   const HomeMenuWidget({
@@ -14,7 +16,14 @@ class HomeMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => zoomDrawerController.toggle!(),
+      onTap: () {
+        zoomDrawerController.toggle!();
+        Navigator.push(
+          context,
+          // ignore: prefer_const_constructors
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Row(
@@ -40,4 +49,3 @@ class HomeMenuWidget extends StatelessWidget {
     );
   }
 }
-

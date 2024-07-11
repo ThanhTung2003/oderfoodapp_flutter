@@ -9,12 +9,13 @@ class MenuScreen extends StatelessWidget {
   final ZoomDrawerController zoomDrawerController;
   final viewmodel = MenuViewModelImp();
 
-   MenuScreen({super.key, required this.zoomDrawerController});
+  MenuScreen({super.key, required this.zoomDrawerController});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 156, 164, 91), //const Color(COLOR_MENU_BACKGROUND)
+      backgroundColor: const Color.fromARGB(
+          255, 156, 164, 91), //const Color(COLOR_MENU_BACKGROUND)
       body: SafeArea(
         child: Column(
           children: [
@@ -40,18 +41,22 @@ class MenuScreen extends StatelessWidget {
                 ),
               ],
             ),
-            // const Divider(
-            // thickness: 1,
-            // ),
+
             HomeMenuWidget(
-              zoomDrawerController: zoomDrawerController,), // menu
-            // const Divider(
-            // thickness: 1,
-            // ),
+              zoomDrawerController: zoomDrawerController,
+            ), // menu
+
+            MenuWidget(
+              icon: Icons.restaurant_rounded,
+              menuName: restaurantList,
+              callback: viewmodel.backtoRestaurantList,
+              zoomDrawerController: zoomDrawerController,
+            ),
+
             MenuWidget(
               icon: Icons.list,
               menuName: categoryText,
-              callback: viewmodel.navigateCategories, 
+              callback: viewmodel.navigateCategories,
               zoomDrawerController: zoomDrawerController,
             ),
           ],

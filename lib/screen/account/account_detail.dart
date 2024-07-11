@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:oderfoodapp_flutter/screen/Change_accountdetail.dart';
+import 'package:oderfoodapp_flutter/screen/account/Change_accountdetail.dart';
 
 // ignore: camel_case_types, must_be_immutable
 class detail_account extends StatelessWidget {
@@ -14,9 +14,8 @@ class detail_account extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          body:SingleChildScrollView(
-            child: 
-             Container(
+          body: SingleChildScrollView(
+              child: Container(
         color: Colors.white,
         child: Column(children: [
           Padding(
@@ -78,7 +77,7 @@ class detail_account extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10))),
             ),
           ),
-            Padding(
+          Padding(
             padding: const EdgeInsets.all(8.0),
             child: Align(
               alignment: Alignment.topLeft,
@@ -158,14 +157,12 @@ class detail_account extends StatelessWidget {
             child: SizedBox(
               child: ElevatedButton(
                 onPressed: () {
-                   Future.delayed(const Duration(seconds: 2), (){
-                     Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) =>  changedetail_account()
-                    ));
-                   }
-                 
-                  );
+                  Future.delayed(const Duration(seconds: 2), () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => changedetail_account()));
+                  });
                 },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.white),
@@ -188,10 +185,7 @@ class detail_account extends StatelessWidget {
             ),
           ),
         ]),
-      )
-
-          ) 
-         ),
+      ))),
     );
   }
 }
