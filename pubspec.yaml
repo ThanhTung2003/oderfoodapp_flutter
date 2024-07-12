@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
+  sdk: '>=2.17.0 <3.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -34,23 +34,30 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.6
-  firebase_core: ^3.1.1
-  get: ^4.6.6 
-  google_fonts: ^6.2.1
-  cached_network_image: ^3.3.1
-  firebase_database: ^11.0.2
-  auto_animated: ^3.2.0
-  carousel_slider: ^4.2.1
-  flutter_zoom_drawer: ^3.2.0
-  flutter_elegant_number_button: ^0.0.6
-  flutter_rating_bar: ^4.0.1
-  badges: ^3.1.2
+  cupertino_icons: any
+  firebase_core: any
+  get: any 
+  google_fonts: any
+  cached_network_image: any
+  firebase_database: any
+  auto_animated: any
+  carousel_slider: any
+  flutter_zoom_drawer: any
+  flutter_elegant_number_button: any
+  flutter_rating_bar: any
+  badges: any
   get_storage: any
-  folding_cell: ^1.0.2
+  folding_cell: any
   intl: any
   flutter_slidable: any
   flutter_spinkit: any
+  firebase_auth: any
+  flutter_auth_ui: any
+  flutter_login: any
+  flutter_locales: any
+  
+  
+  
 
 
   
@@ -93,6 +100,9 @@ flutter:
    - asset/Sacombank.png
    - asset/Vietcombank.png
    - asset/ben.jpg
+  #  - assets/locales/en.json
+  #  - assets/locales/vi.json
+  #  - assets/locales
   
 
 
