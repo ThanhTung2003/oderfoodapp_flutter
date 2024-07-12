@@ -50,6 +50,8 @@ dependencies:
   folding_cell: ^1.0.2
   intl: any
   flutter_slidable: any
+  flutter_spinkit: ^5.2.1
+  slide_to_act: ^2.0.2
 
 
   
@@ -91,6 +93,7 @@ flutter:
    - asset/agribank.png
    - asset/Sacombank.png
    - asset/Vietcombank.png
+   - asset/jack.jpeg
   
 
 

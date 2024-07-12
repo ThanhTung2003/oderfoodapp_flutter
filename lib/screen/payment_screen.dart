@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oderfoodapp_flutter/Animotions/Animotion_payment_fail.dart';
 
 // ignore: camel_case_types
 class payment_food extends StatefulWidget {
@@ -311,14 +312,14 @@ class _payment_food extends State<payment_food> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 1),
+                    padding:  const EdgeInsets.only(top: 1),
                     child: SizedBox(
                       child: ElevatedButton(
                         onPressed: () {
-                          // Navigator.pushReplacement(
-                          //   context,
-                          //   MaterialPageRoute(builder: (context) => const payment_food()),
-                          // );
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) => AnimotionFail()),
+                          );
                         },
                         style: ButtonStyle(
                           backgroundColor:

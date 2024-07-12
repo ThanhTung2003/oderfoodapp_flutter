@@ -35,7 +35,7 @@ class _SrceenAccount extends State<SrceenAccount> {
                     textStyle: const TextStyle(
                         fontSize: 30, fontWeight: FontWeight.w800)),
               ),
-              Icon(
+              const Icon(
                 Icons.settings,
                 size: 30,
               )
@@ -209,7 +209,7 @@ class _SrceenAccount extends State<SrceenAccount> {
 
   Widget _buildInnerWidget1() {
     return Container(
-         color: const Color(0xFFE1C16E),
+          color: const Color.fromARGB(255, 132, 177, 199),
         padding: const EdgeInsets.only(top: 10, left: 15),
         child: Stack(children: [
           Padding(
@@ -346,7 +346,7 @@ class _SrceenAccount extends State<SrceenAccount> {
 
   Widget _buildInnerWidget2() {
     return Container(
-       color: Color(0xFFE1C16E),
+       color: const Color.fromARGB(255, 132, 177, 199),
       padding: const EdgeInsets.only(top: 10),
       child: Stack(
         children: [
@@ -483,7 +483,7 @@ class _SrceenAccount extends State<SrceenAccount> {
 
   Widget _buildInnerWidget3() {
     return Container(
-       color: Color(0xFFE1C16E),
+       color: const Color.fromARGB(255, 132, 177, 199),
       alignment: Alignment.topLeft,
       padding: const EdgeInsets.only(top: 5),
       child: Stack(
