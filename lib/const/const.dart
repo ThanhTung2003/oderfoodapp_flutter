@@ -3,14 +3,13 @@
 const RESTAURANT_REF = 'Restaurant';
 const MOST_POPULAR_REF = 'MostPopular';
 const BEST_DEALS_REF = 'BestDeals';
-const CATEGORY_REF ='Category';
-
-
+const CATEGORY_REF = 'Category';
+const KEY_TOKEN = 'TOKEN';
 
 //mau cua  left_menu
 const COLOR_MENU_BACKGROUND = 0xFF7A6AA6;
 const COLOR_ICON_DRAWER = 0xFF7F0000;
-const COLOR_OVERPLAY =0xAA40404A;
+const COLOR_OVERPLAY = 0xAA40404A;
 
 const FAB_FAV_TAG = 'fav';
 const FAB_CART_TAG = 'Cart';

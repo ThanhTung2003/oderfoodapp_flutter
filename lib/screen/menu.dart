@@ -72,9 +72,14 @@ class MenuScreen extends StatelessWidget {
 
             const Spacer(),
             MenuWidgetCallback(
-              icon: Icons.login,
-              menuName: loginText,
-              callback: viewmodel.processLoginState,
+              icon: viewmodel.checkLoginState(context)
+                  ? Icons.logout
+                  : Icons.login,
+              menuName:
+                  viewmodel.checkLoginState(context) ? logoutText : loginText,
+              callback: viewmodel.checkLoginState(context)
+                  ? viewmodel.logout
+                  : viewmodel.login,
               zoomDrawerController: zoomDrawerController,
             ),
           ],
