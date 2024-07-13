@@ -1,6 +1,6 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyColors {
@@ -54,11 +54,14 @@ class discountWidgetHomeFood extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   alignment: Alignment.topLeft,
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       begin: Alignment.topRight,
                       end: Alignment.bottomLeft,
-                       colors: [Color.fromARGB(255, 255, 153, 0),Color.fromARGB(255, 219, 177, 41)],
-                    ) ,
+                      colors: [
+                        Color.fromARGB(255, 255, 153, 0),
+                        Color.fromARGB(255, 219, 177, 41)
+                      ],
+                    ),
                     // color: Colors.orange,
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
@@ -98,9 +101,10 @@ class discountWidgetHomeFood extends StatelessWidget {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(bottom: 5),
-                            child: Image.asset('asset/cocacola.png',
-                            width: 120,
-                            height: 105,
+                            child: Image.asset(
+                              'asset/cocacola.png',
+                              width: 120,
+                              height: 105,
                             ),
                           )
                         ],
@@ -132,7 +136,7 @@ class discountWidgetHomeFood extends StatelessWidget {
                   ),
                 ),
               ),
-              
+
               Container(
                 margin: const EdgeInsets.all(5.0),
                 decoration: BoxDecoration(

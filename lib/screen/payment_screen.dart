@@ -32,7 +32,7 @@ class _payment_food extends State<payment_food> {
           'Payment Method',
           style: GoogleFonts.roboto(
               textStyle:
-                  const TextStyle(fontSize: 30, fontWeight: FontWeight.w700)),
+                  const TextStyle(fontSize: 30, fontWeight: FontWeight.w800)),
         ),
         leading: const BackButton(),
         backgroundColor: Colors.amber,
@@ -314,31 +314,32 @@ class _payment_food extends State<payment_food> {
                     ),
                   ),
                   Padding(
-                    padding:  const EdgeInsets.only(top: 1),
-                      child: ElevatedButton(
+                    padding: const EdgeInsets.only(top: 1),
                     child: SizedBox(
+                      child: ElevatedButton(
                         onPressed: () {
                           Navigator.pushReplacement(
-                            MaterialPageRoute(builder: (context) => AnimotionFail()),
                             context,
+                            MaterialPageRoute(
+                                builder: (context) => const AnimotionFail()),
                           );
-                        style: ButtonStyle(
                         },
+                        style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(Colors.white),
                           padding: MaterialStateProperty.all(
                               const EdgeInsets.symmetric(
-                          textStyle: MaterialStateProperty.all(
                                   vertical: 20.0, horizontal: 100.0)),
-                          side: MaterialStateProperty.all(
+                          textStyle: MaterialStateProperty.all(
                               const TextStyle(fontSize: 25)),
-                              const BorderSide(color: Colors.black, width: 1.0)),
+                          side: MaterialStateProperty.all(const BorderSide(
+                              color: Colors.black, width: 1.0)),
                         ),
                         child: Text('Thanh Toan',
                             style: GoogleFonts.roboto(
                               textStyle: const TextStyle(
-                                fontSize: 25,
                                 fontWeight: FontWeight.w900,
+                                fontSize: 25,
                                 color: Colors.black,
                               ),
                             )),
