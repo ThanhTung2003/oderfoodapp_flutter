@@ -1,4 +1,3 @@
-
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,7 +8,7 @@ class FavoriteFood extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.amber,
+      backgroundColor: Colors.amber,
       appBar: AppBar(
         title: Text(
           'Favorite Food',
@@ -17,12 +16,10 @@ class FavoriteFood extends StatelessWidget {
               textStyle:
                   const TextStyle(fontSize: 30, fontWeight: FontWeight.w800)),
         ),
-       
         backgroundColor: Colors.amber,
         foregroundColor: Colors.black,
         elevation: 0,
       ),
-
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10),
@@ -98,7 +95,7 @@ class FavoriteFood extends StatelessWidget {
                 child: Container(
                   height: 180,
                   decoration: BoxDecoration(
-                      color:  Colors.white,
+                      color: Colors.white,
                       border: Border.all(width: 1, color: Colors.black),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
@@ -122,10 +119,8 @@ class FavoriteFood extends StatelessWidget {
                             border: Border.all(width: 1.5, color: Colors.black),
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Image.asset('asset/pizza.avif.png',
-                         
-                          
-                          
+                          child: Image.asset(
+                            'asset/pizza.avif.png',
                           ),
                         ),
                         Padding(
@@ -170,7 +165,7 @@ class FavoriteFood extends StatelessWidget {
                 child: Container(
                   height: 180,
                   decoration: BoxDecoration(
-                      color:  Colors.white,
+                      color: Colors.white,
                       border: Border.all(width: 1, color: Colors.black),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
@@ -235,7 +230,7 @@ class FavoriteFood extends StatelessWidget {
                 child: Container(
                   height: 180,
                   decoration: BoxDecoration(
-                      color:  Colors.white,
+                      color: Colors.white,
                       border: Border.all(width: 1, color: Colors.black),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
@@ -300,7 +295,7 @@ class FavoriteFood extends StatelessWidget {
                 child: Container(
                   height: 180,
                   decoration: BoxDecoration(
-                      color:  Colors.white,
+                      color: Colors.white,
                       border: Border.all(width: 1, color: Colors.black),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
@@ -365,7 +360,7 @@ class FavoriteFood extends StatelessWidget {
                 child: Container(
                   height: 180,
                   decoration: BoxDecoration(
-                      color:  Colors.white,
+                      color: Colors.white,
                       border: Border.all(width: 1, color: Colors.black),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [

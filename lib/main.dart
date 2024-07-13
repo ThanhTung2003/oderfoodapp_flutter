@@ -4,11 +4,11 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:oderfoodapp_flutter/Theme_UI/darkmode.dart';
 import 'package:oderfoodapp_flutter/screen/FavoriteFood.dart';
+import 'package:oderfoodapp_flutter/screen/account/account_screen.dart';
 import 'package:oderfoodapp_flutter/screen/cart_detail_screen.dart';
 import 'package:oderfoodapp_flutter/screen/homesrceen.dart';
 import 'package:oderfoodapp_flutter/screen/restaurant_screen.dart';
 import 'package:oderfoodapp_flutter/screen/splash_screen.dart';
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,7 +37,6 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashScreen(),
         '/home': (context) => const RestaurantScreen(),
-        
       },
     );
   }
@@ -52,7 +51,9 @@ class NavigationMenu extends StatelessWidget {
     final darkMode = THelperFunctions.isDarkMode(context);
 
     return Scaffold(
-      backgroundColor: darkMode ? Colors.black : Colors.white, // Adjust background color based on dark mode
+      backgroundColor: darkMode
+          ? Colors.black
+          : Colors.white, // Adjust background color based on dark mode
       bottomNavigationBar: Obx(
         () => NavigationBar(
           height: 80,
@@ -62,13 +63,18 @@ class NavigationMenu extends StatelessWidget {
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
           destinations: const [
-            NavigationDestination(icon: Icon(Icons.home,), label: 'Home'),
+            NavigationDestination(
+                icon: Icon(
+                  Icons.home,
+                ),
+                label: 'Home'),
             NavigationDestination(
                 icon: Icon(Icons.restaurant), label: 'Restaurant'),
-            NavigationDestination(
-                icon: Icon(Icons.receipt), label: 'Order'),
+            NavigationDestination(icon: Icon(Icons.receipt), label: 'Order'),
             NavigationDestination(
                 icon: Icon(Icons.favorite_border), label: 'Favorite'),
+            NavigationDestination(
+                icon: Icon(Icons.account_circle_sharp), label: 'Account'),
           ],
         ),
       ),
@@ -76,6 +82,7 @@ class NavigationMenu extends StatelessWidget {
     );
   }
 }
+
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
@@ -83,6 +90,6 @@ class NavigationController extends GetxController {
     const RestaurantScreen(),
     CartDetailScreen(),
     const FavoriteFood(),
+    const SrceenAccount(),
   ];
 }
-

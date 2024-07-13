@@ -2,8 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:oderfoodapp_flutter/screen/cart_detail_screen.dart';
-import 'package:oderfoodapp_flutter/screen/homesrceen.dart';
+import 'package:oderfoodapp_flutter/screen/restaurant_screen.dart';
 
 class AnimotionFail extends StatelessWidget {
   const AnimotionFail({super.key});
@@ -32,11 +31,11 @@ class AnimotionFail extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only(top: 100),
                 child: SpinKitSquareCircleExample(),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 100),
+                padding: const EdgeInsets.only(top: 230),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Column(
@@ -48,7 +47,8 @@ class AnimotionFail extends StatelessWidget {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const HomeScreen()),
+                                  builder: (context) =>
+                                      const RestaurantScreen()),
                             );
                           },
                           style: ButtonStyle(
@@ -72,57 +72,58 @@ class AnimotionFail extends StatelessWidget {
                               )),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
+                      const Padding(
+                        padding: EdgeInsets.all(5.0),
                         child: SizedBox(
-                          // child: ElevatedButton(
-                          //   onPressed: () {
-                          //     Navigator.pushReplacement(
-                          //       context,
-                          //       MaterialPageRoute(
-                          //           builder: (context) =>  CartDetailScreen()),
-                          //     );
-                          //   },
-                          //   style: ButtonStyle(
-                          //     backgroundColor:
-                          //         MaterialStateProperty.all(Colors.white),
-                          //     padding: MaterialStateProperty.all(
-                          //         const EdgeInsets.symmetric(
-                          //             vertical: 20.0, horizontal: 85.0)),
-                          //     textStyle: MaterialStateProperty.all(
-                          //         const TextStyle(fontSize: 25)),
-                          //     side: MaterialStateProperty.all(const BorderSide(
-                          //         color: Colors.black, width: 1.0)),
-                          //   ),
-                          //   child: Text('Continue buying',
-                          //       style: GoogleFonts.roboto(
-                          //         textStyle: const TextStyle(
-                          //           fontWeight: FontWeight.w900,
-                          //           fontSize: 25,
-                          //           color: Colors.black,
-                          //         ),
-                          //       )),
-                          // ),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 190),
-                            child: TextButton(
-                              onPressed: () {
-                                 Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>  CartDetailScreen()),
-                                 );
-                              },
-                              child: Text(
-                                'Go to back Home',
-                                style: GoogleFonts.roboto(
-                                    textStyle: const TextStyle(fontSize: 25,fontWeight: FontWeight.w300),
-                                    
-                                    ),
-                              ),
+                            // child: ElevatedButton(
+                            //   onPressed: () {
+                            //     Navigator.pushReplacement(
+                            //       context,
+                            //       MaterialPageRoute(
+                            //           builder: (context) =>  CartDetailScreen()),
+                            //     );
+                            //   },
+                            //   style: ButtonStyle(
+                            //     backgroundColor:
+                            //         MaterialStateProperty.all(Colors.white),
+                            //     padding: MaterialStateProperty.all(
+                            //         const EdgeInsets.symmetric(
+                            //             vertical: 20.0, horizontal: 85.0)),
+                            //     textStyle: MaterialStateProperty.all(
+                            //         const TextStyle(fontSize: 25)),
+                            //     side: MaterialStateProperty.all(const BorderSide(
+                            //         color: Colors.black, width: 1.0)),
+                            //   ),
+                            //   child: Text('Continue buying',
+                            //       style: GoogleFonts.roboto(
+                            //         textStyle: const TextStyle(
+                            //           fontWeight: FontWeight.w900,
+                            //           fontSize: 25,
+                            //           color: Colors.black,
+                            //         ),
+                            //       )),
+                            // ),
+                            // child: Padding(
+                            //   padding: const EdgeInsets.only(left: 190),
+                            //   child: TextButton(
+                            //     onPressed: () {
+                            //       Navigator.pushReplacement(
+                            //         context,
+                            //         MaterialPageRoute(
+                            //             builder: (context) => CartDetailScreen()),
+                            //       );
+                            //     },
+                            //     child: Text(
+                            //       'Go to back Home',
+                            //       style: GoogleFonts.roboto(
+                            //         textStyle: const TextStyle(
+                            //             fontSize: 25,
+                            //             fontWeight: FontWeight.w300),
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
                             ),
-                          ),
-                        ),
                       ),
                     ],
                   ),
@@ -168,7 +169,7 @@ class _SpinKitSquareCircleExampleState extends State<SpinKitSquareCircleExample>
   Widget build(BuildContext context) {
     final spinkit = SpinKitPouringHourGlassRefined(
       color: Colors.black,
-      size: 500.0,
+      size: 300.0,
       controller: _controller,
     );
 
