@@ -17,7 +17,7 @@ class FavoriteFood extends StatelessWidget {
               textStyle:
                   const TextStyle(fontSize: 30, fontWeight: FontWeight.w800)),
         ),
-        leading: const BackButton(),
+       
         backgroundColor: Colors.amber,
         foregroundColor: Colors.black,
         elevation: 0,
@@ -33,12 +33,12 @@ class FavoriteFood extends StatelessWidget {
                 child: Container(
                   height: 180,
                   decoration: BoxDecoration(
-                      color: const Color(0xFFD9D9D9),
-                      border: Border.all(width: 2, color: Colors.black),
+                      color: Colors.white,
+                      border: Border.all(width: 1, color: Colors.black),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.5),
+                          color: Colors.black.withOpacity(0.3),
                           spreadRadius: 3,
                           blurRadius: 4,
                           offset: const Offset(0, 3),
@@ -54,7 +54,7 @@ class FavoriteFood extends StatelessWidget {
                           height: 200,
                           decoration: BoxDecoration(
                             color: Colors.amber,
-                            border: Border.all(width: 1, color: Colors.black),
+                            border: Border.all(width: 1.5, color: Colors.black),
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Image.asset('asset/burger.png'),
@@ -84,7 +84,7 @@ class FavoriteFood extends StatelessWidget {
                           ),
                         ),
                         const Icon(
-                          Icons.favorite_border,
+                          Icons.favorite,
                           size: 40,
                           color: Colors.red,
                         )
@@ -94,16 +94,16 @@ class FavoriteFood extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15),
+                padding: const EdgeInsets.only(top: 20),
                 child: Container(
                   height: 180,
                   decoration: BoxDecoration(
-                      color: const Color(0xFFD9D9D9),
-                      border: Border.all(width: 2, color: Colors.black),
+                      color:  Colors.white,
+                      border: Border.all(width: 1, color: Colors.black),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.5),
+                          color: Colors.black.withOpacity(0.3),
                           spreadRadius: 3,
                           blurRadius: 4,
                           offset: const Offset(0, 3),
@@ -119,26 +119,33 @@ class FavoriteFood extends StatelessWidget {
                           height: 200,
                           decoration: BoxDecoration(
                             color: Colors.amber,
-                            border: Border.all(width: 1, color: Colors.black),
+                            border: Border.all(width: 1.5, color: Colors.black),
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Image.asset('asset/burger.png'),
+                          child: Image.asset('asset/pizza.avif.png',
+                         
+                          
+                          
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 30),
                           child: Column(
                             children: [
-                              Text(
-                                'Hamburger',
-                                style: GoogleFonts.roboto(
-                                    textStyle: const TextStyle(
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.w700)),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 60),
+                                child: Text(
+                                  'Pizza',
+                                  style: GoogleFonts.roboto(
+                                      textStyle: const TextStyle(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.w700)),
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(right: 90),
                                 child: Text(
-                                  '20\$',
+                                  '15\$',
                                   style: GoogleFonts.roboto(
                                       textStyle: const TextStyle(
                                           fontSize: 20,
@@ -149,7 +156,7 @@ class FavoriteFood extends StatelessWidget {
                           ),
                         ),
                         const Icon(
-                          Icons.favorite_border,
+                          Icons.favorite,
                           size: 40,
                           color: Colors.red,
                         )
@@ -159,16 +166,16 @@ class FavoriteFood extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15),
+                padding: const EdgeInsets.only(top: 20),
                 child: Container(
                   height: 180,
                   decoration: BoxDecoration(
-                      color: const Color(0xFFD9D9D9),
-                      border: Border.all(width: 2, color: Colors.black),
+                      color:  Colors.white,
+                      border: Border.all(width: 1, color: Colors.black),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.5),
+                          color: Colors.black.withOpacity(0.3),
                           spreadRadius: 3,
                           blurRadius: 4,
                           offset: const Offset(0, 3),
@@ -184,17 +191,17 @@ class FavoriteFood extends StatelessWidget {
                           height: 200,
                           decoration: BoxDecoration(
                             color: Colors.amber,
-                            border: Border.all(width: 1, color: Colors.black),
+                            border: Border.all(width: 1.5, color: Colors.black),
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Image.asset('asset/burger.png'),
+                          child: Image.asset('asset/tomato.png'),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 30),
                           child: Column(
                             children: [
                               Text(
-                                'Hamburger',
+                                'French fries',
                                 style: GoogleFonts.roboto(
                                     textStyle: const TextStyle(
                                         fontSize: 25,
@@ -203,7 +210,7 @@ class FavoriteFood extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(right: 90),
                                 child: Text(
-                                  '20\$',
+                                  '10\$',
                                   style: GoogleFonts.roboto(
                                       textStyle: const TextStyle(
                                           fontSize: 20,
@@ -214,7 +221,7 @@ class FavoriteFood extends StatelessWidget {
                           ),
                         ),
                         const Icon(
-                          Icons.favorite_border,
+                          Icons.favorite,
                           size: 40,
                           color: Colors.red,
                         )
@@ -224,16 +231,16 @@ class FavoriteFood extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15),
+                padding: const EdgeInsets.only(top: 20),
                 child: Container(
                   height: 180,
                   decoration: BoxDecoration(
-                      color: const Color(0xFFD9D9D9),
-                      border: Border.all(width: 2, color: Colors.black),
+                      color:  Colors.white,
+                      border: Border.all(width: 1, color: Colors.black),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.5),
+                          color: Colors.black.withOpacity(0.3),
                           spreadRadius: 3,
                           blurRadius: 4,
                           offset: const Offset(0, 3),
@@ -249,17 +256,17 @@ class FavoriteFood extends StatelessWidget {
                           height: 200,
                           decoration: BoxDecoration(
                             color: Colors.amber,
-                            border: Border.all(width: 1, color: Colors.black),
+                            border: Border.all(width: 1.5, color: Colors.black),
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Image.asset('asset/burger.png'),
+                          child: Image.asset('asset/cocacola.png'),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 30),
                           child: Column(
                             children: [
                               Text(
-                                'Hamburger',
+                                'Cocacola',
                                 style: GoogleFonts.roboto(
                                     textStyle: const TextStyle(
                                         fontSize: 25,
@@ -268,7 +275,7 @@ class FavoriteFood extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(right: 90),
                                 child: Text(
-                                  '20\$',
+                                  '4\$',
                                   style: GoogleFonts.roboto(
                                       textStyle: const TextStyle(
                                           fontSize: 20,
@@ -279,7 +286,7 @@ class FavoriteFood extends StatelessWidget {
                           ),
                         ),
                         const Icon(
-                          Icons.favorite_border,
+                          Icons.favorite,
                           size: 40,
                           color: Colors.red,
                         )
@@ -289,16 +296,16 @@ class FavoriteFood extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15),
+                padding: const EdgeInsets.only(top: 20),
                 child: Container(
                   height: 180,
                   decoration: BoxDecoration(
-                      color: const Color(0xFFD9D9D9),
-                      border: Border.all(width: 2, color: Colors.black),
+                      color:  Colors.white,
+                      border: Border.all(width: 1, color: Colors.black),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.5),
+                          color: Colors.black.withOpacity(0.3),
                           spreadRadius: 3,
                           blurRadius: 4,
                           offset: const Offset(0, 3),
@@ -314,17 +321,17 @@ class FavoriteFood extends StatelessWidget {
                           height: 200,
                           decoration: BoxDecoration(
                             color: Colors.amber,
-                            border: Border.all(width: 1, color: Colors.black),
+                            border: Border.all(width: 1.5, color: Colors.black),
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Image.asset('asset/burger.png'),
+                          child: Image.asset('asset/rice.avif.png'),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 30),
                           child: Column(
                             children: [
                               Text(
-                                'Hamburger',
+                                'Seafood rice',
                                 style: GoogleFonts.roboto(
                                     textStyle: const TextStyle(
                                         fontSize: 25,
@@ -333,7 +340,7 @@ class FavoriteFood extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(right: 90),
                                 child: Text(
-                                  '20\$',
+                                  '25\$',
                                   style: GoogleFonts.roboto(
                                       textStyle: const TextStyle(
                                           fontSize: 20,
@@ -344,7 +351,7 @@ class FavoriteFood extends StatelessWidget {
                           ),
                         ),
                         const Icon(
-                          Icons.favorite_border,
+                          Icons.favorite,
                           size: 40,
                           color: Colors.red,
                         )
@@ -354,16 +361,16 @@ class FavoriteFood extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15),
+                padding: const EdgeInsets.only(top: 20),
                 child: Container(
                   height: 180,
                   decoration: BoxDecoration(
-                      color: const Color(0xFFD9D9D9),
-                      border: Border.all(width: 2, color: Colors.black),
+                      color:  Colors.white,
+                      border: Border.all(width: 1, color: Colors.black),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.5),
+                          color: Colors.black.withOpacity(0.3),
                           spreadRadius: 3,
                           blurRadius: 4,
                           offset: const Offset(0, 3),
@@ -379,26 +386,29 @@ class FavoriteFood extends StatelessWidget {
                           height: 200,
                           decoration: BoxDecoration(
                             color: Colors.amber,
-                            border: Border.all(width: 1, color: Colors.black),
+                            border: Border.all(width: 1.5, color: Colors.black),
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Image.asset('asset/burger.png'),
+                          child: Image.asset('asset/hotdog.avif.png'),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 30),
                           child: Column(
                             children: [
-                              Text(
-                                'Hamburger',
-                                style: GoogleFonts.roboto(
-                                    textStyle: const TextStyle(
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.w700)),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 40),
+                                child: Text(
+                                  'Hot dog',
+                                  style: GoogleFonts.roboto(
+                                      textStyle: const TextStyle(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.w700)),
+                                ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(right: 90),
                                 child: Text(
-                                  '20\$',
+                                  '12\$',
                                   style: GoogleFonts.roboto(
                                       textStyle: const TextStyle(
                                           fontSize: 20,
@@ -409,7 +419,7 @@ class FavoriteFood extends StatelessWidget {
                           ),
                         ),
                         const Icon(
-                          Icons.favorite_border,
+                          Icons.favorite,
                           size: 40,
                           color: Colors.red,
                         )

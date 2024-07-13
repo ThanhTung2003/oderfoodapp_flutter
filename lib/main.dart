@@ -62,13 +62,13 @@ class NavigationMenu extends StatelessWidget {
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
           destinations: const [
-            NavigationDestination(icon: Icon(Icons.home,), label: 'Trang chủ'),
+            NavigationDestination(icon: Icon(Icons.home,), label: 'Home'),
             NavigationDestination(
-                icon: Icon(Icons.restaurant), label: 'Nhà hàng'),
+                icon: Icon(Icons.restaurant), label: 'Restaurant'),
             NavigationDestination(
-                icon: Icon(Icons.receipt), label: 'Đơn hàng'),
+                icon: Icon(Icons.receipt), label: 'Order'),
             NavigationDestination(
-                icon: Icon(Icons.favorite_border), label: 'Yêu thích'),
+                icon: Icon(Icons.favorite_border), label: 'Favorite'),
           ],
         ),
       ),

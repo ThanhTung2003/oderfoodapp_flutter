@@ -94,6 +94,17 @@ flutter:
    - asset/Sacombank.png
    - asset/Vietcombank.png
    - asset/jack.jpeg
+   - asset/chicken.png
+   - asset/tomato.png
+   - asset/cocacola.png
+   - asset/rice.avif.png
+   - asset/hotdog.avif.png
+   - asset/pizza.avif.png
+   - asset/banner.jpg
+   - asset/bannercombo.jpg
+   - asset/banner_burger.jpg
+   - asset/bakery.jpg
+   - asset/banner_restaurant.jpg
   
 
 

@@ -8,12 +8,14 @@ class appbar_homefood extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.white,
+    return  
+    AppBar(
+       backgroundColor: Colors.white,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
+             color: Colors.white  ,
             alignment: Alignment.topLeft, 
             child: GestureDetector(
               onTap: () {
@@ -33,7 +35,7 @@ class appbar_homefood extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10),
             icon: ClipOval(
               child: Image.asset(
-                'asset/logo.jpg',
+                'asset/jack.jpeg',
                 height: 50,
                 width: 50,
                 fit: BoxFit.cover,
