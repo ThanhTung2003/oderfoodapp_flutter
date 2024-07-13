@@ -32,11 +32,11 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [MyColors.color1, MyColors.color2],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
+          // gradient: LinearGradient(
+          //   colors: [MyColors.color1, MyColors.color2],
+          //   begin: Alignment.topCenter,
+          //   end: Alignment.bottomCenter,
+          // ),
         ),
         child: Center(
           child: ClipOval(

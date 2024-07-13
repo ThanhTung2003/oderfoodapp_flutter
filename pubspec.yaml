@@ -55,9 +55,8 @@ dependencies:
   flutter_auth_ui: any
   flutter_login: any
   flutter_locales: any
-  
-  
-  
+  slide_to_act: any
+  firebase_ui_auth: any
 
 
   
@@ -99,10 +98,20 @@ flutter:
    - asset/agribank.png
    - asset/Sacombank.png
    - asset/Vietcombank.png
+   - asset/jack.jpeg
+   - asset/chicken.png
+   - asset/tomato.png
+   - asset/cocacola.png
+   - asset/rice.avif.png
+   - asset/hotdog.avif.png
+   - asset/pizza.avif.png
+   - asset/banner.jpg
+   - asset/bannercombo.jpg
+   - asset/banner_burger.jpg
+   - asset/bakery.jpg
+   - asset/banner_restaurant.jpg
    - asset/ben.jpg
-  #  - assets/locales/en.json
-  #  - assets/locales/vi.json
-  #  - assets/locales
+
   
 
 

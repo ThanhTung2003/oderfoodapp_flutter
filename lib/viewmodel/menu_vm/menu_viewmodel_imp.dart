@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-// ignore: implementation_imports
 import 'package:flutter_auth_ui/flutter_auth_ui.dart';
+// ignore: implementation_imports
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:oderfoodapp_flutter/const/const.dart';

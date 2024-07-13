@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/screen/log_in.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -8,29 +9,29 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: MyColors.color1,
+        // backgroundColor: MyColors.color1,
         elevation: 0,
         centerTitle: true,
-        title: const Text(
-          'Đăng Kí',
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            fontSize: 30.0,
-            fontWeight: FontWeight.w900,
-            color: Colors.white,
-          ),
-        ),
+        title: Text('Register Method',
+            textAlign: TextAlign.left,
+            style: GoogleFonts.roboto(
+              textStyle: const TextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.w900,
+                color: Colors.black,
+              ),
+            )),
       ),
       body: Stack(
         children: <Widget>[
           Container(
             decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [MyColors.color1, MyColors.color2],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
+                // gradient: LinearGradient(
+                //   colors: [MyColors.color1, MyColors.color2],
+                //   begin: Alignment.topCenter,
+                //   end: Alignment.bottomCenter,
+                // ),
+                ),
             width: double.infinity,
             height: double.infinity,
             alignment: Alignment.center,
@@ -41,7 +42,7 @@ class RegisterScreen extends StatelessWidget {
               children: <Widget>[
                 Container(
                   alignment: Alignment.topCenter,
-                  padding: const EdgeInsets.symmetric(vertical: 40.0),
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
                   child: ClipOval(
                     child: Image.asset(
                       'asset/logo.jpg',
@@ -58,7 +59,7 @@ class RegisterScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       prefixIcon: const Icon(
                         Icons.account_circle,
-                        color: Colors.white,
+                        color: Colors.black,
                         size: 35,
                       ),
                       border: OutlineInputBorder(
@@ -69,7 +70,7 @@ class RegisterScreen extends StatelessWidget {
                         ),
                       ),
                       labelStyle: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 20.0,
                       ),
                       labelText: 'Email',
@@ -84,7 +85,7 @@ class RegisterScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       prefixIcon: const Icon(
                         Icons.key,
-                        color: Colors.white,
+                        color: Colors.black,
                         size: 35,
                       ),
                       border: OutlineInputBorder(
@@ -96,9 +97,9 @@ class RegisterScreen extends StatelessWidget {
                       ),
                       labelStyle: const TextStyle(
                         fontSize: 20.0,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
-                      labelText: 'Mật khẩu',
+                      labelText: 'Pass',
                     ),
                   ),
                 ),
@@ -110,7 +111,7 @@ class RegisterScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       prefixIcon: const Icon(
                         Icons.key,
-                        color: Colors.white,
+                        color: Colors.black,
                         size: 35,
                       ),
                       border: OutlineInputBorder(
@@ -122,9 +123,9 @@ class RegisterScreen extends StatelessWidget {
                       ),
                       labelStyle: const TextStyle(
                         fontSize: 20.0,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
-                      labelText: 'Nhập lại mật khẩu',
+                      labelText: 'Enter-Pass ',
                     ),
                   ),
                 ),
@@ -147,13 +148,13 @@ class RegisterScreen extends StatelessWidget {
                         padding: MaterialStateProperty.all(
                             const EdgeInsets.symmetric(
                                 vertical: 20.0, horizontal: 20.0)),
-                        textStyle:
-                            MaterialStateProperty.all(const TextStyle(fontSize: 25)),
+                        textStyle: MaterialStateProperty.all(
+                            const TextStyle(fontSize: 25)),
                         side: MaterialStateProperty.all(
                             const BorderSide(color: Colors.black, width: 1.0)),
                       ),
                       child: const Text(
-                        'Đăng Kí',
+                        'Register',
                         style: TextStyle(
                           fontWeight: FontWeight.w900,
                           color: Colors.black,

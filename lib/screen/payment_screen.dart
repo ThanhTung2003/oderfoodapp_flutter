@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oderfoodapp_flutter/Animotions/Animotion_payment_fail.dart';
 
 // ignore: camel_case_types
 class payment_food extends StatefulWidget {
@@ -31,7 +32,7 @@ class _payment_food extends State<payment_food> {
           'Payment Method',
           style: GoogleFonts.roboto(
               textStyle:
-                  const TextStyle(fontSize: 30, fontWeight: FontWeight.w700)),
+                  const TextStyle(fontSize: 30, fontWeight: FontWeight.w800)),
         ),
         leading: const BackButton(),
         backgroundColor: Colors.amber,
@@ -317,26 +318,27 @@ class _payment_food extends State<payment_food> {
                     child: SizedBox(
                       child: ElevatedButton(
                         onPressed: () {
-                          // Navigator.pushReplacement(
-                          //   context,
-                          //   MaterialPageRoute(builder: (context) => const payment_food()),
-                          // );
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AnimotionFail()),
+                          );
                         },
                         style: ButtonStyle(
                           backgroundColor:
-                              MaterialStateProperty.all(Colors.amberAccent),
+                              MaterialStateProperty.all(Colors.white),
                           padding: MaterialStateProperty.all(
                               const EdgeInsets.symmetric(
                                   vertical: 20.0, horizontal: 100.0)),
                           textStyle: MaterialStateProperty.all(
                               const TextStyle(fontSize: 25)),
-                          side: MaterialStateProperty.all(
-                              const BorderSide(color: Colors.black, width: 1.0)),
+                          side: MaterialStateProperty.all(const BorderSide(
+                              color: Colors.black, width: 1.0)),
                         ),
-                        child: Text('Place Order',
+                        child: Text('Thanh Toan',
                             style: GoogleFonts.roboto(
                               textStyle: const TextStyle(
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w900,
                                 fontSize: 25,
                                 color: Colors.black,
                               ),

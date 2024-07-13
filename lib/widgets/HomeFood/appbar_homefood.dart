@@ -13,6 +13,7 @@ class appbar_homefood extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
+            color: Colors.white,
             alignment: Alignment.topLeft,
             child: GestureDetector(
               onTap: () {},

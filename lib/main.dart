@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:oderfoodapp_flutter/Theme_UI/darkmode.dart';
+import 'package:oderfoodapp_flutter/screen/FavoriteFood.dart';
 import 'package:oderfoodapp_flutter/screen/cart_detail_screen.dart';
 import 'package:oderfoodapp_flutter/screen/homesrceen.dart';
 import 'package:oderfoodapp_flutter/screen/restaurant_screen.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashScreen(),
         '/home': (context) => const RestaurantScreen(),
+        
       },
     );
   }
@@ -60,13 +62,13 @@ class NavigationMenu extends StatelessWidget {
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
           destinations: const [
-            NavigationDestination(icon: Icon(Icons.home), label: 'Trang chủ'),
+            NavigationDestination(icon: Icon(Icons.home,), label: 'Home'),
             NavigationDestination(
-                icon: Icon(Icons.restaurant), label: 'Nhà hàng'),
+                icon: Icon(Icons.restaurant), label: 'Restaurant'),
             NavigationDestination(
-                icon: Icon(Icons.receipt), label: 'Đơn hàng'),
+                icon: Icon(Icons.receipt), label: 'Order'),
             NavigationDestination(
-                icon: Icon(Icons.favorite_border), label: 'Yêu thích'),
+                icon: Icon(Icons.favorite_border), label: 'Favorite'),
           ],
         ),
       ),
@@ -80,9 +82,7 @@ class NavigationController extends GetxController {
     const HomeScreen(),
     const RestaurantScreen(),
     CartDetailScreen(),
-    Container(
-      color: Colors.blueAccent,
-    )
+    const FavoriteFood(),
   ];
 }
 

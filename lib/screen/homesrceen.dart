@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oderfoodapp_flutter/widgets/HomeFood/Discount_widget_HomeFood.dart';
+import 'package:oderfoodapp_flutter/widgets/HomeFood/discount_widget_HomeFood.dart';
 import 'package:oderfoodapp_flutter/widgets/HomeFood/ItemSrcoll_homefood.dart';
 import 'package:oderfoodapp_flutter/widgets/HomeFood/Popular_widget_homefood.dart';
 import 'package:oderfoodapp_flutter/widgets/HomeFood/appbar_homefood.dart';
