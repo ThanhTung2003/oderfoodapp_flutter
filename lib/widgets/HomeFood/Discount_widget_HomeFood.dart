@@ -1,17 +1,14 @@
-
-// ignore_for_file: camel_case_types, file_names
-
 import 'package:flutter/material.dart';
-
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyColors {
   static const Color color1 = Color(0xFF46289C); // Màu #46289C
   static const Color color2 = Color(0xFF7A6AA6); // Màu #7A6AA6
-    // static const Color color3 = Color(0x644AB5);//Màu #644AB5
 }
 
-
-
+// ignore: camel_case_types
 class discountWidgetHomeFood extends StatelessWidget {
   const discountWidgetHomeFood({super.key});
 
@@ -21,89 +18,165 @@ class discountWidgetHomeFood extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
             child: Text(
-              'Khuyến Mãi',
+              'Discount',
               textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w900,
+              style: GoogleFonts.roboto(
+                textStyle: const TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w900,
+                ),
               ),
             ),
           ),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(15),
-            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            alignment: Alignment.topLeft,
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [MyColors.color1, MyColors.color2],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.white.withOpacity(0.5),
-                  spreadRadius: 2,
-                  blurRadius: 10,
-                  offset: const Offset(0, 5),
-                ),
-              ],
+          CarouselSlider(
+            options: CarouselOptions(
+              height: 250.0,
+              enlargeCenterPage: true,
+              autoPlay: true,
+              aspectRatio: 20 / 15,
+              autoPlayCurve: Curves.fastOutSlowIn,
+              enableInfiniteScroll: true,
+              autoPlayAnimationDuration: const Duration(milliseconds: 800),
+              viewportFraction: 0.8,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Hôm Nay',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-                const SizedBox(height: 5),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Hóa Đơn Trên 50K',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w900,
+            items: [
+              SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Container(
+                  width: double.infinity,
+                  height: 230,
+                  padding: const EdgeInsets.all(10),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  alignment: Alignment.topLeft,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                       colors: [Color.fromARGB(255, 255, 153, 0),Color.fromARGB(255, 219, 177, 41)],
+                    ) ,
+                    // color: Colors.orange,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.white.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 10,
+                        offset: const Offset(0, 5),
                       ),
-                    ),
-                    const SizedBox(width: 2),
-                    Image.asset(
-                      'asset/burger.png',
-                      height: 90,
-                      width: 130,
-                    ),
-                  ],
-                ),
-                const Text(
-                  'Tặng ly Pepsi',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Only Today',
+                          style: GoogleFonts.roboto(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          )),
+                      const SizedBox(height: 5),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Text('Bills Over 5\$',
+                                style: GoogleFonts.roboto(
+                                  textStyle: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                )),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 5),
+                            child: Image.asset('asset/cocacola.png',
+                            width: 120,
+                            height: 105,
+                            ),
+                          )
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: Text(
+                          'Give a glass of Cocacola',
+                          style: GoogleFonts.roboto(
+                              textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          )),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+
+              Container(
+                margin: const EdgeInsets.all(5.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  image: const DecorationImage(
+                    image: AssetImage('asset/banner.jpg'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              
+              Container(
+                margin: const EdgeInsets.all(5.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  image: const DecorationImage(
+                    image: AssetImage('asset/bakery.jpg'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(5.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  image: const DecorationImage(
+                    image: AssetImage('asset/banner_restaurant.jpg'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(5.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  image: const DecorationImage(
+                    image: AssetImage('asset/banner_burger.jpg'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              // Thêm các Container khác cho các mục trong carousel
+            ],
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
             child: Text(
-              'Phổ Biến',
+              'Popular',
               textAlign: TextAlign.left,
-              style: TextStyle(
+              style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.w900,
-              ),
+              )),
             ),
           ),
         ],

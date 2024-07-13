@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/main.dart';
 import 'package:oderfoodapp_flutter/screen/register_screen.dart';
 
@@ -9,15 +10,15 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: MyColors.color1,
+        // backgroundColor: MyColors.color1,
         elevation: 0,
         centerTitle: true,
         title: const Text(
-          'Đăng Nhập',
-          style:  TextStyle(
+          'Login Method',
+          style: TextStyle(
             fontSize: 30.0,
             fontWeight: FontWeight.w900,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
       ),
@@ -25,12 +26,12 @@ class LoginScreen extends StatelessWidget {
         children: <Widget>[
           Container(
             decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [MyColors.color1, MyColors.color2],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
+                // gradient: LinearGradient(
+                //   colors: [MyColors.color1, MyColors.color2],
+                //   begin: Alignment.topCenter,
+                //   end: Alignment.bottomCenter,
+                // ),
+                ),
             width: double.infinity,
             height: double.infinity,
             alignment: Alignment.center,
@@ -62,7 +63,7 @@ class LoginScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       prefixIcon: const Icon(
                         Icons.account_circle,
-                        color: Colors.white,
+                        color: Colors.black,
                         size: 35,
                       ),
                       border: OutlineInputBorder(
@@ -73,7 +74,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       labelStyle: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 20.0,
                       ),
                       labelText: 'Email',
@@ -88,7 +89,7 @@ class LoginScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       prefixIcon: const Icon(
                         Icons.key,
-                        color: Colors.white,
+                        color: Colors.black,
                         size: 35,
                       ),
                       border: OutlineInputBorder(
@@ -100,9 +101,9 @@ class LoginScreen extends StatelessWidget {
                       ),
                       labelStyle: const TextStyle(
                         fontSize: 20.0,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
-                      labelText: 'Mật khẩu',
+                      labelText: 'Pass',
                     ),
                   ),
                 ),
@@ -118,7 +119,8 @@ class LoginScreen extends StatelessWidget {
                             Navigator.pushReplacement(
                               context,
                               // ignore: prefer_const_constructors
-                              MaterialPageRoute(builder: (context) =>  NavigationMenu()),
+                              MaterialPageRoute(
+                                  builder: (context) =>  const NavigationMenu()),
                             );
                           },
                           style: ButtonStyle(
@@ -129,11 +131,11 @@ class LoginScreen extends StatelessWidget {
                                     vertical: 20.0, horizontal: 60.0)),
                             textStyle: MaterialStateProperty.all(
                                 const TextStyle(fontSize: 25)),
-                            side: MaterialStateProperty.all(
-                                const BorderSide(color: Colors.black, width: 1.0)),
+                            side: MaterialStateProperty.all(const BorderSide(
+                                color: Colors.black, width: 1.0)),
                           ),
                           child: const Text(
-                            'Đăng Nhập',
+                            'Login',
                             style: TextStyle(
                               fontWeight: FontWeight.w900,
                               color: Colors.black,
@@ -150,14 +152,14 @@ class LoginScreen extends StatelessWidget {
                                 builder: (context) => const RegisterScreen()),
                           );
                         },
-                        child: const Text(
-                          'New Account',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18.0,
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
+                        child: Text('New Account',
+                            style: GoogleFonts.roboto(
+                              textStyle: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 18.0,
+                                decoration: TextDecoration.underline,
+                              ),
+                            )),
                       ),
                     ],
                   ),

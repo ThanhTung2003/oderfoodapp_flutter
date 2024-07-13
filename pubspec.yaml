@@ -50,14 +50,6 @@ dependencies:
   folding_cell: any
   intl: any
   flutter_slidable: any
-  flutter_spinkit: any
-  firebase_auth: any
-  flutter_auth_ui: any
-  flutter_login: any
-  flutter_locales: any
-  
-  
-  
 
 
   
@@ -99,10 +91,6 @@ flutter:
    - asset/agribank.png
    - asset/Sacombank.png
    - asset/Vietcombank.png
-   - asset/ben.jpg
-  #  - assets/locales/en.json
-  #  - assets/locales/vi.json
-  #  - assets/locales
   
 
 

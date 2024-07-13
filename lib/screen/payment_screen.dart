@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oderfoodapp_flutter/Animotions/Animotion_payment_fail.dart';
 
 // ignore: camel_case_types
 class payment_food extends StatefulWidget {
@@ -313,31 +314,31 @@ class _payment_food extends State<payment_food> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 1),
-                    child: SizedBox(
+                    padding:  const EdgeInsets.only(top: 1),
                       child: ElevatedButton(
+                    child: SizedBox(
                         onPressed: () {
-                          // Navigator.pushReplacement(
-                          //   context,
-                          //   MaterialPageRoute(builder: (context) => const payment_food()),
-                          // );
-                        },
+                          Navigator.pushReplacement(
+                            MaterialPageRoute(builder: (context) => AnimotionFail()),
+                            context,
+                          );
                         style: ButtonStyle(
+                        },
                           backgroundColor:
-                              MaterialStateProperty.all(Colors.amberAccent),
+                              MaterialStateProperty.all(Colors.white),
                           padding: MaterialStateProperty.all(
                               const EdgeInsets.symmetric(
-                                  vertical: 20.0, horizontal: 100.0)),
                           textStyle: MaterialStateProperty.all(
-                              const TextStyle(fontSize: 25)),
+                                  vertical: 20.0, horizontal: 100.0)),
                           side: MaterialStateProperty.all(
+                              const TextStyle(fontSize: 25)),
                               const BorderSide(color: Colors.black, width: 1.0)),
                         ),
-                        child: Text('Place Order',
+                        child: Text('Thanh Toan',
                             style: GoogleFonts.roboto(
                               textStyle: const TextStyle(
-                                fontWeight: FontWeight.w600,
                                 fontSize: 25,
+                                fontWeight: FontWeight.w900,
                                 color: Colors.black,
                               ),
                             )),

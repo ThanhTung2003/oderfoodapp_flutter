@@ -43,7 +43,7 @@ class FoodDetailNameWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Giá: ${foodListStateController.selectedFood.value.price} VND',
+                    'Giá: \$${foodListStateController.selectedFood.value.price} ',
                     style: GoogleFonts.roboto(
                       textStyle: const TextStyle(
                         fontSize: 20,
