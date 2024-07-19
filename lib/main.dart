@@ -22,26 +22,41 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'abennnnn',
-      themeMode: ThemeMode.system,
-      darkTheme: ThemeData(
-        primarySwatch: Colors.amber,
-        brightness: Brightness.dark,
-      ),
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-      ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const SplashScreen(),
-        '/home': (context) => const RestaurantScreen(),
-      },
-    );
+    final themeController = Get.put(ThemeController());
+
+    return Obx(() {
+      return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: themeController.isDarkMode.value ? _dark : _light,
+        title: 'OderFoodApp',
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const SplashScreen(),
+          '/home': (context) => const RestaurantScreen(),
+        },
+      );
+    });
   }
 }
 
+ThemeData _dark = ThemeData(brightness: Brightness.dark);
+ThemeData _light = ThemeData(brightness: Brightness.light);
+
+class ThemeController extends GetxController {
+  var isDarkMode = false.obs;
+  final box = GetStorage();
+
+  @override
+  void onInit() {
+    super.onInit();
+    isDarkMode.value = box.read('darkmode') ?? false;
+  }
+
+  void toggleTheme() {
+    isDarkMode.value = !isDarkMode.value;
+    box.write('darkmode', isDarkMode.value);
+  }
+}
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
 
