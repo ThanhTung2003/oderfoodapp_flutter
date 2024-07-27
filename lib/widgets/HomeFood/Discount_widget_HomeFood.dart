@@ -21,7 +21,7 @@ class discountWidgetHomeFood extends StatelessWidget {
         children: [
           Padding(
             padding:
-                 EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
             child: Text(
               'discount'.tr(),
               textAlign: TextAlign.left,

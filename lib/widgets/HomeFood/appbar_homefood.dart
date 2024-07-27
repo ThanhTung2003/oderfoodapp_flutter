@@ -18,10 +18,10 @@ class appbar_homefood extends StatelessWidget {
             alignment: Alignment.topLeft,
             child: GestureDetector(
               onTap: () {},
-              child:  Text(
+              child: Text(
                 "menu".tr(),
                 textAlign: TextAlign.left,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 30.0,
                   fontWeight: FontWeight.w800,
                 ),

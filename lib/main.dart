@@ -89,11 +89,17 @@ class NavigationMenu extends StatelessWidget {
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
           destinations: [
-            NavigationDestination(icon: Icon(Icons.home), label: tr('home')),
-            NavigationDestination(icon: Icon(Icons.restaurant), label: tr('restaurant')),
-            NavigationDestination(icon: Icon(Icons.receipt), label: tr('order')),
-            NavigationDestination(icon: Icon(Icons.favorite_border), label: tr('favorite')),
-            NavigationDestination(icon: Icon(Icons.account_circle_sharp), label: tr('account')),
+            NavigationDestination(
+                icon: const Icon(Icons.home), label: tr('home')),
+            NavigationDestination(
+                icon: const Icon(Icons.restaurant), label: tr('restaurant')),
+            NavigationDestination(
+                icon: const Icon(Icons.receipt), label: tr('order')),
+            NavigationDestination(
+                icon: const Icon(Icons.favorite_border), label: tr('favorite')),
+            NavigationDestination(
+                icon: const Icon(Icons.account_circle_sharp),
+                label: tr('account')),
           ],
         ),
       ),
@@ -109,6 +115,6 @@ class NavigationController extends GetxController {
     const RestaurantScreen(),
     CartDetailScreen(),
     const FavoriteFood(),
-     const SrceenAccount(),
+    const SrceenAccount(),
   ];
 }
