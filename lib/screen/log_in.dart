@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:oderfoodapp_flutter/main.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:oderfoodapp_flutter/screen/register_screen.dart';
+import 'package:oderfoodapp_flutter/main.dart'; // Chắc chắn rằng import này là đúng
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -10,12 +11,11 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // backgroundColor: MyColors.color1,
         elevation: 0,
         centerTitle: true,
-        title: const Text(
-          'Login Method',
-          style: TextStyle(
+        title: Text(
+          "login_title".tr(),
+          style: const TextStyle(
             fontSize: 30.0,
             fontWeight: FontWeight.w900,
             color: Colors.black,
@@ -25,13 +25,7 @@ class LoginScreen extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-            decoration: const BoxDecoration(
-                // gradient: LinearGradient(
-                //   colors: [MyColors.color1, MyColors.color2],
-                //   begin: Alignment.topCenter,
-                //   end: Alignment.bottomCenter,
-                // ),
-                ),
+            decoration: const BoxDecoration(),
             width: double.infinity,
             height: double.infinity,
             alignment: Alignment.center,
@@ -103,10 +97,11 @@ class LoginScreen extends StatelessWidget {
                         fontSize: 20.0,
                         color: Colors.black,
                       ),
-                      labelText: 'Pass',
+                      labelText: "pass".tr(),
                     ),
                   ),
                 ),
+              
                 Container(
                   padding: const EdgeInsets.symmetric(
                       vertical: 7.0, horizontal: 5.0),
@@ -118,9 +113,8 @@ class LoginScreen extends StatelessWidget {
                           onPressed: () {
                             Navigator.pushReplacement(
                               context,
-                              // ignore: prefer_const_constructors
                               MaterialPageRoute(
-                                  builder: (context) =>  const NavigationMenu()),
+                                  builder: (context) => const NavigationMenu()),
                             );
                           },
                           style: ButtonStyle(
@@ -134,9 +128,9 @@ class LoginScreen extends StatelessWidget {
                             side: MaterialStateProperty.all(const BorderSide(
                                 color: Colors.black, width: 1.0)),
                           ),
-                          child: const Text(
-                            'Login',
-                            style: TextStyle(
+                          child:  Text(
+                          "login".tr(), 
+                            style: const TextStyle(
                               fontWeight: FontWeight.w900,
                               color: Colors.black,
                             ),
@@ -152,7 +146,7 @@ class LoginScreen extends StatelessWidget {
                                 builder: (context) => const RegisterScreen()),
                           );
                         },
-                        child: Text('New Account',
+                        child: Text( "newacc".tr(),
                             style: GoogleFonts.roboto(
                               textStyle: const TextStyle(
                                 color: Colors.black,
@@ -171,4 +165,7 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+
+ 
+
 }

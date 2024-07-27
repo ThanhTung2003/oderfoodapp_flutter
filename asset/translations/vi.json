@@ -1,0 +1,34 @@
+{
+    "account_method": "Phương Thức Tài Khoản",
+    "open": "Mở",
+    "close": "Đóng",
+    "settings": "Cài Đặt",
+    "language_change": "Thay Đổi Ngôn Ngữ",
+    "dark_mode": "Tối",
+    "light_mode": "Sáng",
+    "log_out": "Đăng Xuất",
+    "account_info": "Thông Tin Tài Khoản",
+    "change_password": "Đổi Mật Khẩu",
+    "bank_card": "Thẻ Ngân Hàng",
+    "login_title":"Đăng Nhập",
+    "login":"Đăng Nhập",
+    "pass":"Mật Khẩu",
+    "newacc":"Tạo tài khoản mới",
+    "menu":"Thực Đơn",
+    "Account Method":"Cai Dat Tai Khoan",
+    "home":"Trang chủ",
+    "restaurant":"Nhà Hàng",
+    "order":"Đặt Hàng",
+    "favorite":"Yêu thích",
+    "account":"Tài Khoản",
+    "discount":"Giảm Giá",
+    "popular":"Phổ Biến",
+    "Sign up":"Đăng Kí",
+    "Sign up_title":"Đăng Kí",
+    "en_pass":"Nhập lại mật khẩu",
+    "Nearby_Restaurants":"Nhà Hàng Lân Cận"
+
+
+    
+    
+  }

@@ -56,6 +56,7 @@ dependencies:
   flutter_login: any
   flutter_locales: any
   slide_to_act: any
+  easy_localization: any
   firebase_ui_auth: any
 
 
@@ -111,6 +112,8 @@ flutter:
    - asset/bakery.jpg
    - asset/banner_restaurant.jpg
    - asset/ben.jpg
+   - asset/translations/
+  #  - asset/translations/
 
   
 

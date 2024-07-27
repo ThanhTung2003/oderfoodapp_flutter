@@ -30,7 +30,7 @@ class popular_widget_homefood extends StatelessWidget {
                 width: 150,
                 height: 205,
                 decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 242, 237, 237),
+                    color: const Color(0xFFD9D9D9),
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(

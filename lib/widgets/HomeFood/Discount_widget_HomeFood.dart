@@ -1,4 +1,5 @@
 // ignore_for_file: file_names
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,9 +21,9 @@ class discountWidgetHomeFood extends StatelessWidget {
         children: [
           Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+                 EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
             child: Text(
-              'Discount',
+              'discount'.tr(),
               textAlign: TextAlign.left,
               style: GoogleFonts.roboto(
                 textStyle: const TextStyle(
@@ -174,7 +175,7 @@ class discountWidgetHomeFood extends StatelessWidget {
             padding:
                 const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
             child: Text(
-              'Popular',
+              'popular'.tr(),
               textAlign: TextAlign.left,
               style: GoogleFonts.roboto(
                   textStyle: const TextStyle(

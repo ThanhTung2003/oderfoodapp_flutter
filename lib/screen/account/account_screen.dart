@@ -1,6 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:folding_cell/folding_cell/widget.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oderfoodapp_flutter/main.dart';
 import 'package:oderfoodapp_flutter/screen/account/account_detail.dart';
 import 'package:oderfoodapp_flutter/screen/log_in.dart';
 
@@ -21,6 +26,10 @@ class _SrceenAccount extends State<SrceenAccount> {
   final _foldingCellKey2 = GlobalKey<SimpleFoldingCellState>();
   final _foldingCellKey3 = GlobalKey<SimpleFoldingCellState>();
 
+  // final bool _switch = false;
+  // ThemeData _dark = ThemeData(brightness: Brightness.dark);
+  // ThemeData _light = ThemeData(brightness: Brightness.light);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +39,7 @@ class _SrceenAccount extends State<SrceenAccount> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Account Method',
+                "Account Method",
                 style: GoogleFonts.roboto(
                     textStyle: const TextStyle(
                         fontSize: 30, fontWeight: FontWeight.w800)),
@@ -77,7 +86,7 @@ class _SrceenAccount extends State<SrceenAccount> {
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Container(
-decoration: BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Colors.amber,
                       border: Border.all(color: Colors.black, width: 2),
                       borderRadius: BorderRadius.circular(10),
@@ -138,7 +147,7 @@ decoration: BoxDecoration(
                             const EdgeInsets.symmetric(
                                 vertical: 20.0, horizontal: 80.0)),
                         textStyle: MaterialStateProperty.all(
-const TextStyle(fontSize: 25)),
+                            const TextStyle(fontSize: 25)),
                         side: MaterialStateProperty.all(
                             const BorderSide(color: Colors.black, width: 1)),
                       ),
@@ -183,9 +192,8 @@ const TextStyle(fontSize: 25)),
               height: 40,
               width: 80,
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.black, width: 1),
-                borderRadius: BorderRadius.circular(50)
-              ),
+                  border: Border.all(color: Colors.black, width: 1),
+                  borderRadius: BorderRadius.circular(50)),
               child: TextButton(
                 onPressed: () => _foldingCellKey1.currentState?.toggleFold(),
                 style: TextButton.styleFrom(
@@ -209,7 +217,7 @@ const TextStyle(fontSize: 25)),
 
   Widget _buildInnerWidget1() {
     return Container(
-          color: const Color.fromARGB(255, 132, 177, 199),
+         color:  const Color.fromARGB(255, 178, 245, 120),
         padding: const EdgeInsets.only(top: 10, left: 15),
         child: Stack(children: [
           Padding(
@@ -229,7 +237,7 @@ const TextStyle(fontSize: 25)),
                       child: Text(
                         "Thông Tin Tài Khoản",
                         style: GoogleFonts.roboto(
-color: Colors.black,
+                          color: Colors.black,
                           fontSize: 25.0,
                           fontWeight: FontWeight.w500,
                         ),
@@ -272,12 +280,12 @@ color: Colors.black,
             right: 10,
             bottom: 10,
             child: Container(
-               height: 40,
+              height: 40,
               width: 80,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black, width: 1),
                 borderRadius: BorderRadius.circular(50),
-            ),
+              ),
               child: TextButton(
                 onPressed: () => _foldingCellKey1.currentState?.toggleFold(),
                 style: TextButton.styleFrom(
@@ -319,10 +327,10 @@ color: Colors.black,
             right: 10,
             bottom: 10,
             child: Container(
-               height: 40,
+              height: 40,
               width: 80,
               decoration: BoxDecoration(
-border: Border.all(color: Colors.black, width: 1),
+                border: Border.all(color: Colors.black, width: 1),
                 borderRadius: BorderRadius.circular(50),
               ),
               child: TextButton(
@@ -346,7 +354,7 @@ border: Border.all(color: Colors.black, width: 1),
 
   Widget _buildInnerWidget2() {
     return Container(
-       color: const Color.fromARGB(255, 132, 177, 199),
+       color:  const Color.fromARGB(255, 178, 245, 120),
       padding: const EdgeInsets.only(top: 10),
       child: Stack(
         children: [
@@ -408,10 +416,10 @@ border: Border.all(color: Colors.black, width: 1),
             right: 10,
             bottom: 10,
             child: Container(
-               height: 40,
+              height: 40,
               width: 80,
               decoration: BoxDecoration(
-border: Border.all(color: Colors.black, width: 1),
+                border: Border.all(color: Colors.black, width: 1),
                 borderRadius: BorderRadius.circular(50),
               ),
               child: TextButton(
@@ -454,7 +462,7 @@ border: Border.all(color: Colors.black, width: 1),
             right: 10,
             bottom: 10,
             child: Container(
-               height: 40,
+              height: 40,
               width: 80,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black, width: 1),
@@ -482,59 +490,113 @@ border: Border.all(color: Colors.black, width: 1),
   }
 
   Widget _buildInnerWidget3() {
-    return Container(
-       color: const Color.fromARGB(255, 132, 177, 199),
-      alignment: Alignment.topLeft,
-      padding: const EdgeInsets.only(top: 5),
-      child: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(30),
-            child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: TextButton(
-                      onPressed: () {
-                        // Xử lý sự kiện khi nút được nhấn
-                      },
-                      child: Text(
-                        "Thay đổi Ngôn Ngữ",
-                        style: GoogleFonts.roboto(
-                          color: Colors.black,
-                          fontSize: 25.0,
-                          fontWeight: FontWeight.w500,
-),
-                      )),
-                ),
-              ],
-            ),
-          ),
-          Positioned(
-            right: 10,
-            bottom: 10,
-            child: Container(
-               height: 40,
-              width: 80,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black, width: 1),
-                borderRadius: BorderRadius.circular(50),
-              ),
-              child: TextButton(
-                onPressed: () => _foldingCellKey3.currentState?.toggleFold(),
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  minimumSize: const Size(80, 40),
-                ),
-                child: Text("Đóng",
+    final themeController = Get.find<ThemeController>();
+
+    return  Container(
+        color:  const Color.fromARGB(255, 178, 245, 120),
+        alignment: Alignment.topLeft,
+        padding: const EdgeInsets.only(top: 0),
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(30),
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: TextButton(
+                        onPressed: () {
+                          // Xử lý sự kiện khi nút được nhấn
+                        },
+                        child: Text(
+                          "Thay đổi Ngôn Ngữ",
+                          style: GoogleFonts.roboto(
+                            color: Colors.black,
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 30,
+                    width:200,
+                    child: _buildButtonChangeLanguage(context)),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: TextButton(
+                        onPressed: () {
+                          // Xử lý sự kiện khi nút được nhấn
+                        },
+                        child: Text(
+                          "Thay đổi Giao Diện",
+                          style: GoogleFonts.roboto(
+                            color: Colors.black,
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        )),
+                  ),
+                  Text(
+                    themeController.isDarkMode.value ? 'Dark' : 'Light',
                     style: GoogleFonts.roboto(
                       textStyle: const TextStyle(
-                          fontWeight: FontWeight.w400, color: Colors.black),
-                    )),
+                          fontSize: 18, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  Switch(
+                    value: themeController.isDarkMode.value,
+                    onChanged: (value) {
+                      themeController.toggleTheme();
+                    },
+                  ),
+                ],
               ),
             ),
-          ),
-        ],
+            Positioned(
+              right: 10,
+              bottom: 10,
+              child: Container(
+                height: 40,
+                width: 80,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black, width: 1),
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: TextButton(
+                  onPressed: () => _foldingCellKey3.currentState?.toggleFold(),
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    minimumSize: const Size(80, 40),
+                  ),
+                  child: Text("Đóng",
+                      style: GoogleFonts.roboto(
+                        textStyle: const TextStyle(
+                            fontWeight: FontWeight.w400, color: Colors.black),
+                      )),
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    
+  }
+
+  Widget _buildButtonChangeLanguage(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 48,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: ElevatedButton(
+        onPressed: () {
+          final currentLocale = context.locale.toString();
+          if (currentLocale == 'en') {
+            context.setLocale(const Locale('vi'));
+          } else {
+            context.setLocale(const Locale('en'));
+          }
+        },
+        child: const Text('Change'),
       ),
     );
   }
