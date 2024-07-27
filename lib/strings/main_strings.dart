@@ -1,1 +1,3 @@
-const restaurantText = 'Nearby Restaurants';
+import 'package:easy_localization/easy_localization.dart';
+
+ String restaurantText = 'Nearby_Restaurants'.tr();

@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:oderfoodapp_flutter/Theme_UI/darkmode.dart';
 import 'package:oderfoodapp_flutter/screen/FavoriteFood.dart';
 import 'package:oderfoodapp_flutter/screen/account/account_screen.dart';
@@ -14,7 +15,13 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await GetStorage.init();
-  runApp(const MyApp());
+  await EasyLocalization.ensureInitialized();
+  runApp(EasyLocalization(
+    supportedLocales: const [Locale('en'), Locale('vi')],
+    path: 'asset/translations',
+    fallbackLocale: const Locale('en', 'US'),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -30,6 +37,9 @@ class MyApp extends StatelessWidget {
         theme: themeController.isDarkMode.value ? _dark : _light,
         title: 'OderFoodApp',
         initialRoute: '/',
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
         routes: {
           '/': (context) => const SplashScreen(),
           '/home': (context) => const RestaurantScreen(),
@@ -57,6 +67,7 @@ class ThemeController extends GetxController {
     box.write('darkmode', isDarkMode.value);
   }
 }
+
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
 
@@ -77,19 +88,12 @@ class NavigationMenu extends StatelessWidget {
           selectedIndex: controller.selectedIndex.value,
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
-          destinations: const [
-            NavigationDestination(
-                icon: Icon(
-                  Icons.home,
-                ),
-                label: 'Home'),
-            NavigationDestination(
-                icon: Icon(Icons.restaurant), label: 'Restaurant'),
-            NavigationDestination(icon: Icon(Icons.receipt), label: 'Order'),
-            NavigationDestination(
-                icon: Icon(Icons.favorite_border), label: 'Favorite'),
-            NavigationDestination(
-                icon: Icon(Icons.account_circle_sharp), label: 'Account'),
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home), label: tr('home')),
+            NavigationDestination(icon: Icon(Icons.restaurant), label: tr('restaurant')),
+            NavigationDestination(icon: Icon(Icons.receipt), label: tr('order')),
+            NavigationDestination(icon: Icon(Icons.favorite_border), label: tr('favorite')),
+            NavigationDestination(icon: Icon(Icons.account_circle_sharp), label: tr('account')),
           ],
         ),
       ),
@@ -105,6 +109,6 @@ class NavigationController extends GetxController {
     const RestaurantScreen(),
     CartDetailScreen(),
     const FavoriteFood(),
-    const SrceenAccount(),
+     const SrceenAccount(),
   ];
 }

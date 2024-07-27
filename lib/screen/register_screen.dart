@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oderfoodapp_flutter/screen/log_in.dart';
@@ -12,7 +13,7 @@ class RegisterScreen extends StatelessWidget {
         // backgroundColor: MyColors.color1,
         elevation: 0,
         centerTitle: true,
-        title: Text('Register Method',
+        title: Text("Sign up_title".tr(),
             textAlign: TextAlign.left,
             style: GoogleFonts.roboto(
               textStyle: const TextStyle(
@@ -99,7 +100,7 @@ class RegisterScreen extends StatelessWidget {
                         fontSize: 20.0,
                         color: Colors.black,
                       ),
-                      labelText: 'Pass',
+                      labelText: 'pass'.tr(),
                     ),
                   ),
                 ),
@@ -125,7 +126,7 @@ class RegisterScreen extends StatelessWidget {
                         fontSize: 20.0,
                         color: Colors.black,
                       ),
-                      labelText: 'Enter-Pass ',
+                      labelText: 'en_pass'.tr(),
                     ),
                   ),
                 ),
@@ -139,7 +140,7 @@ class RegisterScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const LoginScreen()),
+                              builder: (context) =>  const LoginScreen()),
                         );
                       },
                       style: ButtonStyle(
@@ -153,9 +154,9 @@ class RegisterScreen extends StatelessWidget {
                         side: MaterialStateProperty.all(
                             const BorderSide(color: Colors.black, width: 1.0)),
                       ),
-                      child: const Text(
-                        'Register',
-                        style: TextStyle(
+                      child:  Text(
+                        'Sign up'.tr(),
+                        style: const TextStyle(
                           fontWeight: FontWeight.w900,
                           color: Colors.black,
                         ),

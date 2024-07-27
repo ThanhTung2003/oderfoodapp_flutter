@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:oderfoodapp_flutter/screen/account/account_screen.dart';
 
 // ignore: camel_case_types
@@ -17,8 +18,8 @@ class appbar_homefood extends StatelessWidget {
             alignment: Alignment.topLeft,
             child: GestureDetector(
               onTap: () {},
-              child: const Text(
-                'Menu',
+              child:  Text(
+                "menu".tr(),
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   fontSize: 30.0,
